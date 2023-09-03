@@ -21,7 +21,7 @@ If both processes reside on the same machine, original RPC involves redundant da
     1. Idle cores can be used to cache  
 
 ## Steps of LRPC
-1. Client calls procedure = kernel trap
+1. **Kernel trap**: client calls procedure
     1. arguments of the calling process are pushed on the stack
     2. argument stack is writable by both client and server 
 2. **Shared memory creation**: after sending trap to kernel (in kernel mode), it either
@@ -32,3 +32,11 @@ If both processes reside on the same machine, original RPC involves redundant da
 6. **Return to Client**
     1. after the procedure is done, another trap to the kernel
     2. kernel again changes back the address space and returns control to the client
+  
+## v.s. upcalls 
+Both papers aim to optimize IPC but do so by tackling different problems and proposing different solutions. Upcalls focuses on the vertical integration within a system across different layers, while LRPC focuses on the horizontal interaction between processes, especially on the same machine. Both papers touch on the idea of using a single address space for optimization. 
+
+
+
+
+
