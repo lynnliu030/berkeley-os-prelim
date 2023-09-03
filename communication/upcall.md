@@ -28,5 +28,5 @@ Upcall-based socket
 * **Usability**: programmers more familiar with subroutine interface than IPC, some thread design decisions can be delayed
 
 ## Cons
-* Upward dependency, lower levels are often shared among different upper levels clients
-* Security: need garbage collection and high-level language for safe access to the single address space 
+* **Upward dependency and fault tolerance**: lower levels are often shared among different upper levels clients
+* **Security**: need garbage collection and high-level language for safe access to the single address space 
