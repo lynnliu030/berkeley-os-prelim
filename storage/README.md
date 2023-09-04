@@ -7,6 +7,7 @@
 |  | [Sprite](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/sprite.md) (1991) |
 |  | [GFS](https://github.com/lynnliu030/os-prelim/blob/main/storage/gfs.md) (2003)|
 
+## Objectives: performance, crash consistency, availability
 * FFS optimizes performance by changing the on-disk FS layouts
 * JFS optimizes for crash consistency by using journalling and re-do logging
 * LFS optimizes for small-write performance by write buffering
@@ -15,12 +16,38 @@
 * CODA optimizes for availability when the client is disconnected, by using server and client replication, and optimisitic replica control for conflict resolution
 * GFS is modern distributed file system that optimizes in DC environment where there is large file, append-only workloads and faults are normal. It deploys a centralized scheduling scheme, decouple control and data (use large chunks), uses data replication to improve scalability and fault tolerance.
 
-## Fault handling v.s crash consistency 
+## Small v.s large files 
+There is a design trade-off of FS depending on whether they are optimized for large number of small files, or few number of large files. Decisions like block size, number of inodes, batching etc affect this. 
 
-## Lots of small files v.s one large file 
+### Small files 
+* Pros: high concurrency, lower latency, easier to distribute across multiple nodes
+* Cons: increase metadata overhead, potential file count limitations
+
+### Large files
+* Pros: reduced metadata, easier management, efficient for sequential access
+* Cons: not optimized for high concurrency, potential for data corruption affecting the whole file, internal fragmentation 
+
+For example, GFS chooses larger block size to reduce the metadata size and improve sequential access performance. Traditional FS uses a much smaller block size. 
+
 
 ## Sequential v.s random reads / writes 
+### Sequential access 
+* Pros: more efficient disk I/O, better use of cache
+### Random access 
+* Cons: less efficient disk utilizations
 
-## Optimized workloads for each case 
+LFS is optimized for write-heavy workloads by accumulating small random writes and flushes them to disk sequentially. This approach minimizes disk seek time and makes efficient use of disk bandwidth. GFS is designed to handle a few large files and focuses on optimizing sequential reads and appends (i.e. batch processing workloads like MapReduce). 
 
-## Performance v.s persistence tradeoff 
+## Trade-offs 
+### Performance v.s crash recovery 
+File systems that prioritize performance might use strategies like delayed writes, write caching, or large write buffers to improve speed. However, these can be problematic if the system crashes before the data is persistently stored, affecting the system's ability to recover from crashes.
+
+Examples like JFS uses journalling and redo-logging to ensure crash consistency and faster recovery, but can incur a performance cost on every write.
+
+In distributed FS, NFS uses a stateless protocol for faster crash recovery, but can run into scalability issue because the need of repeated cache validation between client and server. AFS adds some states to the server, but makes crash recovery more complicated. 
+
+### Consistency v.s performance 
+GFS
+CODA 
+
+
