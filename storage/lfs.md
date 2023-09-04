@@ -1,5 +1,5 @@
 # The Design and Implementation of a Log-Structured File System (1991) 
-LFS is a copy-on-write (COW) based file system that introduces a new approach of writing to disk: instead of overwriting file in place, LFS buffers all updates into in-memory segment and write them out together sequentially. LFS performs garbage collection periodically to reclaim free segments.  
+LFS is a copy-on-write (COW) based file system that introduces **a new approach of writing** to disk: instead of overwriting file in place, LFS buffers all updates into in-memory segment and write them out together sequentially. LFS performs garbage collection periodically to reclaim free segments.  
 
 ## Motivation: optimize writes 
 1. System memories are growing, can be used for cache
