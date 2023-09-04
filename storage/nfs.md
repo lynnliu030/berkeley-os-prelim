@@ -1,5 +1,5 @@
 # Design and Implementation of the Sun Network Filesystem (NFS) (1985) 
-NFS is a distributed file system designed to make sharing of filesystem resources in a network of non-homogeneous machines easier. Design goals are 
+NFS is a **distributed file system** designed to make sharing of filesystem resources in a network of non-homogeneous machines easier. Design goals are 
 
 1. **Crash recovery** (main goal): recover easily from server crashes
 3. Transparency and UNIX semantics: access remote files as local 
