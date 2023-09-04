@@ -7,7 +7,11 @@
 |  | [Sprite](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/sprite.md) (1991) |
 |  | [GFS](https://github.com/lynnliu030/os-prelim/blob/main/storage/gfs.md) (2003)|
 
-## Objectives: performance, crash consistency, availability
+Other paper:
+* [Rethink the Sync](https://github.com/lynnliu030/os-prelim/blob/main/storage/rethink_sync.md)
+* [Chord](https://github.com/lynnliu030/os-prelim/blob/main/storage/chord.md)
+  
+## Objectives: performance, scalability, durability, availability
 * FFS optimizes performance by changing the on-disk FS layouts
 * JFS optimizes for crash consistency by using journalling and re-do logging
 * LFS optimizes for small-write performance by write buffering
@@ -39,14 +43,14 @@ For example, GFS chooses larger block size to reduce the metadata size and impro
 LFS is optimized for write-heavy workloads by accumulating small random writes and flushes them to disk sequentially. This approach minimizes disk seek time and makes efficient use of disk bandwidth. GFS is designed to handle a few large files and focuses on optimizing sequential reads and appends (i.e. batch processing workloads like MapReduce). 
 
 ## Trade-offs 
-### Performance v.s crash recovery 
-File systems that prioritize performance might use strategies like delayed writes, write caching, or large write buffers to improve speed. However, these can be problematic if the system crashes before the data is persistently stored, affecting the system's ability to recover from crashes.
+### 1. Performance v.s durability (crash recovery) 
+File systems that prioritize performance might use strategies like delayed writes, write caching, or large write buffers to improve speed. However, these decrease the durability. And if the system crashes before the data is persistently stored, affecting the system's ability to recover from crashes.
 
 Examples like JFS uses journalling and redo-logging to ensure crash consistency and faster recovery, but can incur a performance cost on every write.
 
 In distributed FS, NFS uses a stateless protocol for faster crash recovery, but can run into scalability issue because the need of repeated cache validation between client and server. AFS adds some states to the server, but makes crash recovery more complicated. 
 
-### Consistency v.s performance 
+### 2. Consistency v.s performance 
 GFS
 CODA 
 
