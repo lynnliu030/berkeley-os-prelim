@@ -1,5 +1,8 @@
  # Storage Systems 
-| First Header  | Second Header |
+| Local FS  | Distributed FS |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| FFS  | NFS |
+| LFS  | AFS  |
+| JFS  | CODA | 
+|  | GFS  |
+|  | Sprite  |
