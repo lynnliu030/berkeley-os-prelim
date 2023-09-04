@@ -1,4 +1,4 @@
-# Crash Consistency 
+# JFS: Crash Consistency 
 **_setup_**: FS with inode bitmap, data bitmap, inodes, and data blocks 
 
 **_scenario_**: append requires updating inode, the data block, and data bitmap. Imagine the dirty writes still sits in main memory in the page cache for some times. 
