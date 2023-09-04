@@ -6,7 +6,7 @@ Security flaws in OS have immense impact on many users and pieces of software. A
 How to ensure that the resources each process is permitted to access are exactly those it should access in ways we desired? What primitives are needed from the OS? What mechanisms should be provided from the hardware? 
 
 ## Security Guideline
-### Autehntication 
+### Authentication  
 * How to attenticate users
   *  What you know: passwords and pins (crypto), multi-factor authentication
   *  What you have: tickets, IDs, hardware token
