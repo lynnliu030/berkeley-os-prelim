@@ -13,19 +13,19 @@ Coda wants to support disconnected operation, i.e. enables a client to continue 
     -  allow copies to diverge, detect, and resolve conflicts 
 
 ## Disconnected operations: state transition 
-* Hoarding: pre-caching 
+* **Hoarding**: pre-caching 
   * client is connected and actively downloaded files from server and keep a cache locally 
   * balance current working set v.s. future needs  
   * hoard walk periodically restores equillibrium between recent and explicit cache
   * refetch purged cache object upon next hoard walk
   * directories allowed to become inconsistent as most operations are adding or removing items
-* Emulation: psuedo-server 
+* **Emulation**: psuedo-server 
   * replace the function of the server
   * logging for fault-tolerance
     * save replay log locally
     * compact entries to log to limit cache growth
   * RVM (camelot) keeps integrity of metadata during disconnected operation
-* Reintegration
+* **Reintegration**
   * propagates changes back to servers (i.e. transfer updates, resolves conflicts) 
   * on conflicts, users use a debugging program to replay selectively
     
