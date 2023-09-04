@@ -19,6 +19,8 @@ Other paper:
 * AFS optimizes distributed FS performance by using the callback mechanism, putting some states in the server
 * CODA optimizes for availability when the client is disconnected, by using server and client replication, and optimisitic replica control for conflict resolution
 * GFS is modern distributed file system that optimizes in DC environment where there is large file, append-only workloads and faults are normal. It deploys a centralized scheduling scheme, decouple control and data (use large chunks), uses data replication to improve scalability and fault tolerance.
+* External synchrony balances the durability v.s performance trade-offs via a user-oriented approach
+* Chord optimizes for scalable information lookup in large-scale p2p distributed storage system 
 
 ## Small v.s large files 
 There is a design trade-off of FS depending on whether they are optimized for large number of small files, or few number of large files. Decisions like block size, number of inodes, batching etc affect this. 
@@ -50,8 +52,14 @@ Examples like JFS uses journalling and redo-logging to ensure crash consistency 
 
 In distributed FS, NFS uses a stateless protocol for faster crash recovery, but can run into scalability issue because the need of repeated cache validation between client and server. AFS adds some states to the server, but makes crash recovery more complicated. 
 
-### 2. Consistency v.s performance 
-GFS
-CODA 
+External synchorny balances performance and durability trade-offs by providing guarantees directly to the users. 
 
+### 2. Consistency v.s availability 
+In distributed file systems, maintaining strict consistency often comes at the cost of availability. If a node fails or network partitions occur, strictly consistent systems may become unavailable until the issue is resolved.
 
+CODA: Optimizes for availability when the client is disconnected, using server and client replication and optimistic replica control for conflict resolution. However, this can potentially compromise strict consistency (also a trade-off of pessimistic and optimistic concurrency control). 
+
+### 3. Consistency v.s performance 
+In many systems, the more consistent you make your system, the more you might have to sacrifice in performance because ensuring consistency often involves additional communications between nodes, which can slow down operations.
+
+GFS deploys a weaker consistency model but allows the system to perform great at scale. 
