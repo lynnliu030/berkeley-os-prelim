@@ -32,5 +32,5 @@ Cons
 
 ### Others
 Today’s trends is that hardware is becoming faster, this might make exokernel design principals more valuable 
-    - E.x DB system that needs high performance often completely forgo FS all together and manage raw block
-    - DPDK in Linux: let application bypass kernel abstraction (i.e. storage, networking stack) and go directly to the raw hardware
+- E.x DB system that needs high performance often completely forgo FS all together and manage raw block
+- DPDK in Linux: let application bypass kernel abstraction (i.e. storage, networking stack) and go directly to the raw hardware
