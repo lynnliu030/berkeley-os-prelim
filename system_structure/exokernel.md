@@ -14,11 +14,11 @@ This is done by **moving abstractions into untrusted user-space libraries** call
 
 ### Principals 
 
-1. Separate protection from mgmt (policy): Resource management is restricted to functions necessary for protection.
-2. Expose allocation: Applications allocate resources explicitly.
-3. Expose name: Exokernels use physical names wherever possible, access hardware directly 
-4. Expose revocation: Exokernels let applications to choose which instance of a resource to give up.
-5. Expose information: Exokernels expose all system information and collect data that applications cannot easily derive locally.
+1. Separate protection from mgmt (policy): resource management is restricted to functions necessary for protection.
+2. Expose allocation: applications allocate resources explicitly.
+3. Expose name: use physical names wherever possible, access hardware directly 
+4. Expose revocation: let applications to choose which instance of a resource to give up
+5. Expose information: expose all system information and collect data that applications cannot easily derive locally
 
 ## Pros and Cons
 Pros 
