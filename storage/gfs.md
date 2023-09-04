@@ -27,6 +27,7 @@ GFS is a scalable distributed file system for large distributed data-intensive a
     -  Handle lots of operations on a given chunks
     -  Reduce size of metadata stored on server and network communication in-between
     -  Beneficial for sequential writes
+- Lease: maintain a consistent mutation order across replicas
 - Chunk lease to one replica for each chunk (i.e. primary replica), which decides serial order for all mutations to the chunk
 - Check data integrity using checksum blocks in each chunkserver
 - Data forwarding is pipelined for efficiency, and is also network-aware
