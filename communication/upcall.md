@@ -1,5 +1,5 @@
 # The Structuring of Systems Using Upcalls (1985)
-The paper introduces the concept of **"upcalls,"** a mechanism allowing lower layers in a system to call back into higher layer (e.g., through runtime-bound handlers). Upcalls are positioned as an alternative to traditional "downcalls" or system calls, which follow the top-down control flow typical in systems.
+The paper introduces a mechanism allowing lower layers in a system to call back into higher layer. By allowing synchronous calls between layers instead of using downcalls (i.e. async communication), performance can be greatly enhanced. 
 
 ## Baselines: Layer as Processes
 - Each layer as a process: different address space, so no corruption
@@ -11,7 +11,7 @@ The paper introduces the concept of **"upcalls,"** a mechanism allowing lower la
     - Downcall (polling or callbacks): Tell me when to send / receive more data on any of these sockets
 
 ## Key Techniques 
-Some techniques mentioned in the paper: 
+Allow kernel to make synchronous call into client: 
 1. **Single Address Space**: all modules are kept within a single address space to allow for direct procedure calls between them.
 2. **Multi-threading**: modules efficiently use upcalls and downcalls
 3. **Flexible Control Flow**: unlike downcalls, which only go from higher-level modules to lower-level ones, upcalls provide a two-way interaction, allowing for more dynamic and adaptive system behavior.
