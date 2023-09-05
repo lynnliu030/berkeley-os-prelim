@@ -40,8 +40,6 @@ This is suitable for
 * Securing IoT edge device communication between cloud and client
 * Collaborative computing, financial services, healthcare, manufacturing, etc. 
 
-E.x. Communication between senders and receivers: Imagine a secure messaging application where even the service provider should not have access to the messages. SGX enclaves could be used to encrypt messages on the sender's side and decrypt them on the recipient's side, ensuring end-to-end confidentiality and integrity.
-
 E.x. IoT edge communication: In IoT applications, the edge devices often collect sensitive information that is sent to a central server for processing. SGX can be used to encrypt this data securely at the source, ensuring that any interception at any point between the edge device and central server will not compromise the data. It's also useful for securely updating the software running on IoT devices.
 
 E.x. cloud processing sensitive information: A cloud computing service that processes confidential medical images could take advantage of SGX by having users upload encrypted images, with the encryption keys being sent by the users to the software running within a secure enclave. This enclave contains the processing algorithm and the protected code for encrypting and decrypting the images. The code that receives the uploaded encrypted images and stores them would be left outside the enclave.
