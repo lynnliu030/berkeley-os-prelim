@@ -29,7 +29,7 @@ Intel's Software Guard Extensions (SGX) offers **hardware-based** memory encrypt
 
 <img width="846" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/0032f272-4989-426d-a9bb-d5881afd2164">
 
->At runtime, Intel SGX instructions build and execute the enclave into a special encrypted memory region with restricted entry/exit location defined by the developer. This helps prevent data leakage. Enclave code and data inside the CPU perimeter runs in the clear, and enclave data written to memory is encrypted and its integrity checked, helping provide some assurance that no unauthorized access or memory snooping of the enclave occurs.
+>At runtime, Intel SGX instructions build and execute the enclave into **a special encrypted memory region** with **restricted entry/exit location** defined by the developer. This helps prevent data leakage. Enclave code and data inside the CPU perimeter runs in the clear, and enclave data written to memory is encrypted and its integrity checked, helping provide some assurance that no unauthorized access or memory snooping of the enclave occurs.
 
 ## Usecases 
 With a secure enclave environment, parties can finally efficiently collaborate by contributing individual data for some larger computation without other parties or any third parties ever learning any private data. 
