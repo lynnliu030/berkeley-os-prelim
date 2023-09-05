@@ -30,8 +30,8 @@ Resources are often **shared** among multiple users, applications, or services. 
 *  Cons: weaker isolation and security guarantees 
 
 ## Virtualization v.s Containers
-* VM: virtualize the underlying hardware
-* Containers: virtualie the OS, so each container contains only the application and its libraries and dependencies
+* VM: virtualize hardware
+* Containers: virtualie OS, contains only the application and its libraries and dependencies
 * LightVM paper discusses the trade-offs between containers and VMs in terms of performance and security (isolation) guarantees
 
 ## Isolation and Fault tolerance 
