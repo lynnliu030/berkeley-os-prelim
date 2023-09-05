@@ -1,6 +1,16 @@
 # Isolation and Resource Management 
 Resources are often **shared** among multiple users, applications, or services. The need for isolation arises to ensure that these entities do not interfere with each other, either intentionally or unintentionally, in terms of security, resource utilization, performance, and fault tolerance. 
 
+## List of Questions 
+1. What is virtualization? how are they used today?
+   - how do you virtualize hardware (cpu, memory, device)?
+   - what is the design goal of Xen? and how does it accomplish it? 
+2. What is container? how are they used today?
+   - how do you implement containerization?
+   - what are some problems associated with containers? 
+3. What are the trade-offs between virtulization and container?
+4. How does exokernel compared to hypervisors?
+
 ## Virtualization 
 [Virtualization](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/virtualization.md) allows multiple guest OSes (and their applications) to share the hardware resources of a single physical server. 
 
