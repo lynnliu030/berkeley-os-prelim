@@ -5,9 +5,9 @@
 The paper discussed how to improve network and computation utilization by modeling the network as a pipeline. Messagers include a pointer to code that is shared on all machines. Messages are sent ASAP with minimal buffering and servers execute code as soon as they recieve a message. This asynchonously frees up the client to continue computing without the overhead of buffering along the network stack.
 
 ## Key techniques: active messages
-User-Level Handler: Each active message contains the address of a "handler," a small piece of code that resides in the user space.
+1. **User-Level Handler**: This is essentially a code pointer that indicates a specific, small piece of code that needs to be executed when the message is received. The handler is shared and known across all machines in the network.
 
-Message Body: The message body contains arguments or data that the handler will need to execute its operations.
+2. **Message Body**: This portion contains the actual data or arguments that the handler will use when it executes its code.
 
 ## Workflows 
 1. Message Sending: When a processor wants to send data to another, it wraps the data and the handler's address into an Active Message and sends it to the receiving processor.
