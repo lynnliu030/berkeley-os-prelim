@@ -26,7 +26,7 @@ For X86 pre 2005:
 *  Goal: full virtualization == guest OS not modified
 *  Main idea: rewrite VM binrary to never issue those 17 instructions 
 *  Approach: dynamic binary translation
-    1) insepct code blocks to be executed
+    1) inspect code to be executed 
     2) if needed, translate to alternate instruction sequence
        - e.g. to emulate desired behavior, possibly even avoiding trap
     3) otherwise, run at hardware speeds
