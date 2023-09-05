@@ -8,6 +8,8 @@ Resources are often **shared** among multiple users, applications, or services. 
 
 ## Virtualization 
 Virtualization allows multiple guest OSes to share the hardware resources of a single physical server, managed by a software layer called _hypervisor_. 
+### CPU Virtualization 
+
 1. **Full virtualization**
      *  Techniques: bbinary translation and direct execution
          *  Hypervisor translates kernel code to replace non-virtualizable instructions
@@ -26,6 +28,16 @@ Virtualization allows multiple guest OSes to share the hardware resources of a s
      *  Pros: excellent compatibility, but some performance issues
    
 <img width="1253" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/6d23e632-1de2-4a13-8804-3b99c048875c">
+
+### Memory Virtualization 
+The guest OS continues to control the mapping of virtual addresses to the guest memory physical addresses, but the guest OS cannot have direct access to the actual machine memory. The VMM is responsible for mapping guest physical memory to the actual machine memory, and it uses shadow page tables to accelerate the mappings. 
+
+<img width="440" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/eff659fb-83e3-49b8-9085-520888580438">
+
+### Device and I/O virtualization 
+The hypervisor virtualizes the physical hardware and presents each virtual machine with a standardized set of virtual devices. These virtual devices effectively emulate well-known hardware and translate the virtual machine requests to the system hardware. 
+
+<img width="346" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/c025a240-2a47-4c7b-b824-b0f8fa7dc8c4">
 
 ## Containers 
 * Containers are lightweight, encapsulated environments that run applications and their dependencies.
