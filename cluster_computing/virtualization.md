@@ -8,14 +8,15 @@ Reference: https://learn.udacity.com/courses/ud923/lessons/1df60659-fbbb-4dee-85
     * Non-privileged operations: hardware speed
     * Privileged operations: trap to hypervisor
 * Hypervisor determines what needs to be done
-* If legal, then hypervisor emulates the behavior the guest OS expects from the hardware
+    * Emulates the behavior the guest OS expects from the hardware
 
 Commodity hardware has more than 2 protection levels. E.g. X86 has 2 protection levels (rings) and 2 protection modes (root and non-root) recently. 
 
-For X86 pre 2005:
+For X86 pre 2005, if trap-and-emulate: 
 * 4 rings, hypervisor in ring 0, guest OS in ring 1 
-* 17 privileged instructions do not trap, fail silently! 
-* E.x. enable / disable interrupt bit in privileged register, done through POPF / PUSHF instructions that access it from ring 1 fail silently 
+* Problem: certain privileged instructions that can only be executed in Ring 0
+   *  17 privileged instructions do not trap, fail silently! 
+   * E.x. enable / disable interrupt bit in privileged register, done through POPF / PUSHF instructions that access it from ring 1 fail silently 
 * Hypervisor does not know, will not emulate the behaviors, assume changes was successful 
 
 ## CPU Virtualization
@@ -26,7 +27,7 @@ For X86 pre 2005:
 *  Goal: full virtualization == guest OS not modified
 *  Main idea: rewrite VM binrary to never issue those 17 instructions 
 *  Approach: dynamic binary translation
-    1) inspect code to be executed 
+    1) hypervisor inspect code to be executed by the guest OS 
     2) if needed, translate to alternate instruction sequence
        - e.g. to emulate desired behavior, possibly even avoiding trap
     3) otherwise, run at hardware speeds
