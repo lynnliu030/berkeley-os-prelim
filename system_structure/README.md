@@ -13,7 +13,7 @@ The "best" architecture largely depends on what you prioritize: Is it performanc
 ### Microkernel
 1. Flexibility: High, very modular.
 2. Reliability: Stable, isolated modules.
-3. Security: Secure but slower due to isolation.
+3. Security: Secure but slower due to isolation (i.e. lots of context switches, IPC between components) 
 4. When to Use: Critical systems where high security and reliability are essential, like in avionics, automotive safety systems, and medical equipment.
 5. Why: The isolated modular components make it easier to verify system correctness and improve security.
 
