@@ -22,7 +22,21 @@ Resources are often **shared** among multiple users, applications, or services. 
 ## Virtualization v.s Containers
 * VM: virtualize the underlying hardware
 * Containers: virtualie the OS, so each container contains only the application and its libraries and dependencies
-* LightVM paper discusses the trade-offs between containers and VMs in terms of performance and security (isolation) guarantees 
+* LightVM paper discusses the trade-offs between containers and VMs in terms of performance and security (isolation) guarantees
+
+## Isolation and Fault tolerance 
+**Isolation**: keeping different parts of a system separated such that a failure, error, or security breach in one part does not propagate to other parts. This segregation can be in terms of memory, processing, or even network communication.
+
+It is important for fault tolerance because:
+* Prevent a single point of failure from bringing down the entire system
+* Limit the spread of security vulnerabilities
+* Make it easier to identify and fix issues with modules
+
+For example, UNIX provides isolation:
+* Process isolation: each process runs in its own address space
+* User and group permissions: file and process access control based on user and group permissions
+* Namespace: used to isolate different system resources like network, PID, and mounts
+   *  i.e. containers  
 
 ## Exokernel v.s Hypervisor 
 Exokernels and hypervisors have many similarities, in that they multiplex and protect hardware with minimal abstraction. Comparisons are [here](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/exokernel_vs_hypervisor.md). 
