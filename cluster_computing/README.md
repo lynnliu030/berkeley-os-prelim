@@ -7,34 +7,7 @@ Virtualization allows multiple guest OSes (and their applications) to share the 
 * Virtual resources: each OS thinks that it owns the hardware resources
 * Virtual machine: OS + applications + virtual resources
 * Virtualization layer: management of physical hardware (e.x. VMM, hypervisor)
-  
-### CPU Virtualization 
-
-1. **Full virtualization**: binary translation and direct execution
-     *  Hypervisor translates kernel code to replace non-virtualizable instructions
-     *  User-level code runs directly for better performance
-     *  Pros: best isolation and security, excellent compatibility (unmodified guest OS) 
-2. **Paravirtualization**: hypercalls 
-     *  Replace non-virtualizable instructions with hypercalls that directly talks to hypervisor
-     *  Pros: lower virtualization overhead
-     *  Cons: poor compatibility, requires OS kernel modifications 
-3. **Hardware-assisted virtualization**: root mode 
-     *  Allow VMM to run in new root mode below ring 0
-         *  Privileged calls are set to automatically trap to hypervisor
-     *  Pros: excellent compatibility
-     *  Cons: some performance issues
-   
-<img width="1253" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/6d23e632-1de2-4a13-8804-3b99c048875c">
-
-### Memory Virtualization 
-The guest OS controls mapping of virtual addresses to the guest memory physical addresses, but the guest OS cannot have direct access to the actual machine memory. The VMM is responsible for mapping guest physical memory to the actual machine memory, and it uses shadow page tables to accelerate the mappings. 
-
-<img width="440" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/eff659fb-83e3-49b8-9085-520888580438">
-
-### Device and I/O virtualization 
-The hypervisor virtualizes the physical hardware and presents each virtual machine with a standardized set of virtual devices (i.e. emulate hardware and translate the virtual machine requests to the system hardware). 
-
-<img width="346" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/c025a240-2a47-4c7b-b824-b0f8fa7dc8c4">
+    *  emulate the behavior the guest OS expects from the HW  
 
 ## Containers 
 * Containers are lightweight, encapsulated environments that run applications and their dependencies.
