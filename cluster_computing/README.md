@@ -33,7 +33,9 @@ Virtualization allows multiple guest OSes to share the hardware resources of a s
 * Mechanisms: kernel featurers like namespace and cgroups 
     *  Namespacing: isolates process trees, networking user IDs, and mounts
     *  Cgroups: limit and prioritize CPU, memory, block I/Os, and network resources
-*  Used in microservices   
+*  Used in microservices
+*  Pros: low overhead
+*  Cons: weaker isolation and security guarantees 
 
 ## Virtualization v.s Containers
 Instead of virtualizing the underlying hardware, containers virtualize the operating system (typically Linux) so each individual container contains only the application and its libraries and dependencies. The absence of the guest OS is why containers are so lightweight and, thus, fast and portable.
