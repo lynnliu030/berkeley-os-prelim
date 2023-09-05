@@ -1,7 +1,9 @@
 # System Structure 
 ## Flexibility v.s Reliability v.s Security 
 
-### Monolithic Kernel
+### Monolithic Kernel 
+Achieves performance and ease of communication (i.e. system calls) at the cost of modular flexibility and isolation-based security. 
+
 1. Flexibility: Limited, everything's in one big codebase.
 2. Reliability: Generally stable but one bug can crash all.
 3. Security: Generally secure but one flaw can be disastrous.
@@ -9,6 +11,8 @@
 5. Why: They are typically faster and have been heavily optimized over years of development.
 
 ### Microkernel
+Prioritizes modular flexibility and security at the expense of performance due to the overhead in message-passing.
+
 1. Flexibility: High, very modular.
 2. Reliability: Stable, isolated modules.
 3. Security: Secure but slower due to isolation (i.e. lots of context switches, IPC between components) 
@@ -16,6 +20,8 @@
 5. Why: The isolated modular components make it easier to verify system correctness and improve security.
 
 ### Hybrid Kernel
+Aims for a balanced compromise between performance, security, and reliability but may suffer from increased complexity.
+
 1. Flexibility: Balanced, best of both monolithic and microkernel.
 2. Reliability: Generally stable, depends on implementation.
 3. Security: Balanced, but complexity can introduce flaws.
@@ -23,6 +29,8 @@
 5. Why: They aim to combine the best features of both monolithic and microkernels, making them versatile for a variety of applications.
    
 ### Exokernel
+Maximizes flexibility and performance at the cost of system-wide reliability and security.
+
 1. Flexibility: Very high, direct hardware access.
 2. Reliability: Risky, bad code can crash system.
 3. Security: Less secure, minimal isolation.
@@ -30,6 +38,8 @@
 5. Why: They allow applications to communicate directly with the hardware, ensuring minimal overhead.
 
 ### Multi-kernel 
+Balances scalability and potential reliability, but security is highly variable.
+
 1. Flexibility: Adaptable across multiple CPUs/cores.
 2. Reliability: Redundancy can improve stability.
 3. Security: Varies, but distribution can help.
