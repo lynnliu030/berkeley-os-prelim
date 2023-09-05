@@ -4,32 +4,33 @@ Reference:
 * https://opaque.co/what-are-secure-enclaves/
 * https://www.trentonsystems.com/blog/what-is-intel-sgx
   
-## Motivation: secure environment for data processing  
-We want to eliminate the need to trust Infrastructure as a Service (IaaS) providers by creating a provably secure environment for data processing. This is critical in multi-tenant, cloud, or edge computing environments where data breaches and insider threats are a concern.
+## Why secure enclave? 
+_Purpose_: Create a secure environment for data processing where you don't have to trust service providers.
 
 ## Secure Enclave 
-_definition_: a computing environment that isolates code and data from the OS and privileged users. 
+_definition_: a specialized area in computing that's isolated from everything else, including the operating system and users with high-level access.
 
--  Even users with root access to the machines and OS should not be able to learn the contents of secure enclave memory or tamper with the execution of code inside the enclave.
--  All of the major cloud providers now have secure enclave offerings. 
+-  ensures that not even users with root access can see or interfere with the data or code in the enclave
 
 ### Comparisons with traditional encryption 
-* Data-at-rest: stationary data stored in non-volatile memory such as cloud storage or hard drives
-* Data-in-motion: data actively being transmitted, typically over some network
-* Data-in-use: data actively processed by a system for some application. Various secrets such as keys and passwords are some candidates that need to be secured
-  
-Most systems today protect _data-at-rest_ and _data-in-motion_ using **SSL/TLS, symmetric, and asymmetric key encryption**. When data needs to be used, its contents are decrypted in memory. 
-
-Problem of _**data-in-use**_: an application that operates on some data must be able to see the data, but if data is sensitive, user must trust the application is not leaking data and platform that application runs is secure. 
-
-Current approach such as access control is susceptible to human error and does not protect against informaiton leakage; homomorphic encryption (HE) allows computations directly performed on encrypted data, but is too slow. 
+* Data protection types 
+  * Data-at-rest: stored data (e.g. hard drives) 
+  * Data-in-motion: data being transferred (e.g. over internet) 
+  * Data-in-use: data being actively used or processed
+* _Current state_: most systems protect data-at-rest and data-in-motion with encryption technologies like SSL/TLS
+* _Problem_: data-in-use is vulnerable, you must trust the application and the platfomrm it runs on
+    *  access control: suspectible for human error, does not protect against info leakage
+    *  homomorphic encryption (HE): allow compute on encrypted data, but too slow  
 
 ## Intel's SGX 
-Intel's Software Guard Extensions (SGX) offers **hardware-based** memory encryption that isolates specific application code and data in memory.
-
+Intel's Software Guard Extensions (SGX) offers **hardware-based** security. 
+* Memory protection: create a "safe box" within your computer's memory that's encrypted and accessible to only specific code (running within the enclave)
+* Computing environment: where code to be executed is protected, even the OS cannot access it
+* At runtime, SGX builds an encrypted area in memory. Code and data can freely operate inside this area but are encrypted when stored or moved outside it, preventing unauthorized access.
+   
 <img width="846" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/0032f272-4989-426d-a9bb-d5881afd2164">
 
->At runtime, Intel SGX instructions build and execute the enclave into **a special encrypted memory region** with **restricted entry/exit location** defined by the developer. This helps prevent data leakage. Enclave code and data inside the CPU perimeter runs in the clear, and enclave data written to memory is encrypted and its integrity checked, helping provide some assurance that no unauthorized access or memory snooping of the enclave occurs.
+>At runtime, Intel SGX instructions build and execute the enclave into **a special encrypted memory region** with **restricted entry/exit location** defined by the developer.
 
 ## Usecases 
 With a secure enclave environment, parties can finally efficiently collaborate by contributing individual data for some larger computation without other parties or any third parties ever learning any private data. 
