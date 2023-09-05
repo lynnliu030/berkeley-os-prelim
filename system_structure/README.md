@@ -1,7 +1,5 @@
 # System Structure 
 ## Flexibility v.s Reliability v.s Security 
-The "best" architecture largely depends on what you prioritize: Is it performance? Security? Reliability? Flexibility for future updates? For a well-rounded system that balances flexibility, reliability, and security, a Hybrid Kernel like Windows NT could be the best choice. However, if you prioritize security and reliability, a Microkernel design like QNX or Minix would be better suited, albeit with some performance sacrifice.
-
 
 ### Monolithic Kernel
 1. Flexibility: Limited, everything's in one big codebase.
