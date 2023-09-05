@@ -1,6 +1,6 @@
 # Sample Questions 
 Question #1: Exokernels and Hypervisors
-Exokernels and hypervisors have many similarities, in that they multiplex and protect hardware with minimal abstraction.
+Exokernels and hypervisors have many similarities, in that they **multiplex and protect hardware with minimal abstraction**.
 1. How does the exokernel manage address translations and memory reclamation (i.e., page replacement)?
 2. How does a hypervisor like Disco or VMware manage address translations and memory reclamation?
 3. What performance optimizations are available in one system (Exokernel or hypervisor) and not available in the other
