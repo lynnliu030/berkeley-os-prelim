@@ -16,10 +16,10 @@ Resources are often **shared** among multiple users, applications, or services. 
     *  Namespacing: isolates process trees, networking user IDs, and mounts
     *  Cgroups: limit and prioritize CPU, memory, block I/Os, and network resources
 *  Used in microservices
-*  Pros: low overhead
+*  Pros: lightweight, fast, and portable 
 *  Cons: weaker isolation and security guarantees 
 
 ## Virtualization v.s Containers
-Instead of virtualizing the underlying hardware, containers virtualize the operating system (typically Linux) so each individual container contains only the application and its libraries and dependencies. The absence of the guest OS is why containers are so lightweight and, thus, fast and portable.
-
-LightVM paper discusses the trade-offs between containers and VMs. 
+* VM: virtualize the underlying hardware
+* Containers: virtualie the OS, so each container contains only the application and its libraries and dependencies
+* LightVM paper discusses the trade-offs between containers and VMs in terms of performance and security (isolation) guarantees 
