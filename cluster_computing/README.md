@@ -25,4 +25,4 @@ Resources are often **shared** among multiple users, applications, or services. 
 * LightVM paper discusses the trade-offs between containers and VMs in terms of performance and security (isolation) guarantees 
 
 ## Exokernel v.s Hypervisor 
-Exokernels and hypervisors have many similarities, in that they multiplex and protect hardware with minimal abstraction. Comparisons are here. 
+Exokernels and hypervisors have many similarities, in that they multiplex and protect hardware with minimal abstraction. Comparisons are [here](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/exokernel_vs_hypervisor.md). 
