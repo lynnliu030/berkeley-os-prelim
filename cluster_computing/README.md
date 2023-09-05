@@ -2,7 +2,7 @@
 Resources are often **shared** among multiple users, applications, or services. The need for isolation arises to ensure that these entities do not interfere with each other, either intentionally or unintentionally, in terms of security, resource utilization, performance, and fault tolerance. 
 
 ## Virtualization 
-Virtualization allows multiple guest OSes (and their applications) to share the hardware resources of a single physical server. 
+[Virtualization](https://github.com/lynnliu030/os-prelim/blob/main/cluster_computing/virtualization.md) allows multiple guest OSes (and their applications) to share the hardware resources of a single physical server. 
 
 * Virtual resources: each OS thinks that it owns the hardware resources
 * Virtual machine: OS + applications + virtual resources
