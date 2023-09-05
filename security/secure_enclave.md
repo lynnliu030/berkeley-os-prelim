@@ -44,3 +44,11 @@ E.x. Communication between senders and receivers: Imagine a secure messaging app
 E.x. IoT edge communication: In IoT applications, the edge devices often collect sensitive information that is sent to a central server for processing. SGX can be used to encrypt this data securely at the source, ensuring that any interception at any point between the edge device and central server will not compromise the data. It's also useful for securely updating the software running on IoT devices.
 
 E.x. cloud processing sensitive information: A cloud computing service that processes confidential medical images could take advantage of SGX by having users upload encrypted images, with the encryption keys being sent by the users to the software running within a secure enclave. This enclave contains the processing algorithm and the protected code for encrypting and decrypting the images. The code that receives the uploaded encrypted images and stores them would be left outside the enclave.
+
+Example steps
+1. _Initial Communication_: User communicates with the cloud service via SSL/TLS to establish a secure channel.
+2. _Remote Attestation_: Intel SGX enclave on the cloud server can provide a proof of its legitimacy through remote attestation. This ensures the user that they are communicating with a genuine, secure enclave.
+3. _Encrypting the Images_: User uses a symmetric (asymmetric) encryption algorithm to encrypt the sensitive medical images. 
+4. _Transmitting the Encrypted Images and Key_: The encrypted images and encryption key are sent to the cloud server over secure channel.
+5. _Enclave Processing_: The enclave decrypts and subsequently processes the images, maintaining the confidentiality and integrity of the sensitive data.
+6. _Storing Encrypted Images_: storing and receiving encrypted data outside enclave does not expose sensitive information
