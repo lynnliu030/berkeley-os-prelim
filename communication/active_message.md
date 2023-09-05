@@ -7,10 +7,10 @@
 2. **Message Body**: This portion contains the actual data or arguments that the handler will use when it executes its code.
 
 ## Workflows 
-1. Message Sending: wraps the data and the handler's address into an Active Message and sends 
+1. _Message Sending_: wraps the data and the handler's address into an Active Message and sends 
 
-2. Asynchronous Operation: sender does not wait for an ACK from the receiver and continues its own computation.
+2. _Asynchronous Operation_: sender does not wait for an ACK from the receiver and continues its own computation.
 
-3. Message Receiving: receiver reads the Active Message, immediately executes the handler, passing in the provided arguments.
+3. _Message Receiving_: receiver reads the Active Message, immediately executes the handler, passing in the provided arguments.
 
-4. Handler Execution: The handler, being a lightweight piece of code, carries out its operation quickly and integrates the received data into the ongoing computation at the receiver's end. The idea is to get the data "out of the network and into computation" as quickly as possible.
+4. _Handler Execution_: The handler, being a lightweight piece of code, carries out its operation quickly and integrates the received data into the ongoing computation at the receiver's end. The idea is to get the data "out of the network and into computation" as quickly as possible.
