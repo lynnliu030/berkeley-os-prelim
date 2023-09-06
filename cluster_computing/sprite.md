@@ -23,7 +23,4 @@ Examples
 
 ### Differences 
 * Forward kernel call: not a standard practice due to better networking and API solutions 
-* Residual dependencies
-    *  Sprite: minimize residual dependencies and make migration easier
-    *  VMs: need to move entire machine state (OS, running apps, dependencies)
-    *  Containers: sometimes embrace residual dependencies through pod model 
+* VM and Containers: more coarse-grained, moving the entire VM or container applications (often grouped into Pods in K9s), the goal is to manage and move them effectively as a unit 
