@@ -18,3 +18,6 @@ DRF allocates resources according to agents’ proportional demands, in a way th
 - System resources = <9, 18>
 - Task A requires <1, 4>, and Task B requires <3, 1>
 - DRF repeatedly selects the user with the lowest dominant share to launch a task, until no more tasks can be allocated
+
+### Connections 
+DRF can be applied to general resource allocation in multi-tenant setup to ensure fair usage of multiple resource types. For example, in a cloud environment where VMs are competing for CPU, memory, and bandwidth, DRF can allocate resources in such a way that no single VM or container can monopolize any single resource, thus providing a balanced and fair environment.
