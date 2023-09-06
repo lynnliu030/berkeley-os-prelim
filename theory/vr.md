@@ -56,8 +56,12 @@ _Reasoning_:
 5. Primary inform other replicas about commit either through piggy-backed information or send directly, secondary then commits in order
 
 ### #2: View Change Protocol 
+* The system moves through a sequence of views
+* In each **view** one of the replicas is selected to be the primary
+* View changes are used to mask failures of the primary
+* The correctness condition: every committed operation survives into all subsequent views in the same position in the serial order
 * View change protocol must obtain information from logs of at least $f+1$ replica
-* Ensure all **committed** operations will be known (i.e. recorded in at least one of these logs)
+    * Ensure all **committed** operations will be known (i.e. recorded in at least one of these logs)
 * Viewstamps: < _view-number_, _op-number_>   
     *  ensure operations that are "preparing" but not committed will not get lost
     *  i.e. a new leader may assign a previous used op-number to different operation, causing inconsistency
