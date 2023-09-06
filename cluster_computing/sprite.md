@@ -23,4 +23,5 @@ Examples
 
 ### Differences 
 * Forward kernel call: not a standard practice due to better networking and API solutions 
-* VM and Containers: more coarse-grained, moving the entire VM or container applications (often grouped into Pods in K9s), the goal is to manage and move them effectively as a unit 
+* VM and Containers: more coarse-grained, moving the entire VM or container applications (often grouped into Pods in K9s), the goal is to manage and move them effectively as a unit
+   * Why? consistency, performance, and isolation 
