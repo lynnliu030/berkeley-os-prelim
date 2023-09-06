@@ -1,6 +1,5 @@
 # System Structure 
-## Flexibility v.s Reliability v.s Security 
-
+## Different types of kernel 
 ### Monolithic Kernel 
 Achieves performance and ease of communication (i.e. system calls) at the cost of modular flexibility and isolation-based security. 
 
@@ -50,3 +49,5 @@ Balances scalability and potential reliability, but security is highly variable.
 * Import functionality into kernel vs expose hardware?
 * Cost of abstrations
 * Monolithic kernels v.s microkernels 
+
+## Flexibility v.s Reliability v.s Security 
