@@ -48,6 +48,7 @@ While Lamport clocks operate primarily under synchronous assumptions, both VR an
 1. Explain different failures type
 2. Explain different synchrony type 
 3. Explain the roles of primary and backups in the system.
+4. Explain what quorum is, and how are they used 
 
 ### pBFT 
 1. How does Practical Byzantine Fault Tolerance (PBFT) improve upon existing fault tolerance mechanisms?
