@@ -68,7 +68,7 @@ _Reasoning_:
 *  Once a node advances _view-number_ it no longer accepts messages from old view, instead it informs senders about new view 
  
 Steps:
-1. Replica $i$ suspects primary is faulty, advances its _view-number_, set its status to _view-change_, and send < $DO_VIEW_CHANGE$, $v$, $l$, $k$, $i$ > to the new primary
+1. Replica $i$ suspects primary is faulty, advances its _view-number_, set its status to _view-change_, and send < $DOVIEWCHANGE$, $v$, $l$, $k$, $i$ > to the new primary
    *  Not accept any $PREPARE$ message from old primary 
 2. When new primary receives $f+1$ messages, it selects the _most recent_ of those messages as the new log (i.e. with the largest viewstamp).
    *  Set _op-number_ to latest entry in new _log_
