@@ -18,3 +18,6 @@ Unikernels: create minimalistic VMs where a pared-down OS is directly
        *  get rid of Xenstore: store data, guest comm, sync
        *  use shared memory and event channel for communication     
    *  optimized to offer fast boot-times that scale to large # of VMs  
+
+## Use cases 
+JIT service instantiation in mobile edge computing, lightweight compute services like AWS Lambda 
