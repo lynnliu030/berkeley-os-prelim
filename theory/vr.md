@@ -78,5 +78,5 @@ Steps:
 
 ### #3: Recovery Protocol 
 1. Replica $i$ sends a < $RECOVERY$, $v$, $r$ > nessage to all other replicas, where $v$ is its starting _view-number$
-2. Replica $i$ replies < $RECOVERY$ $RESPONSE$ $v$, $l$, $k$, $i$> only when its status is $normal$ and its _view-number_ is greater than $v$, and is primary of its view.
+2. Replica $i$ replies < $RECOVERY$ $RESPONSE$ $v$, $l$, $k$, $i$ > only when its status is $normal$ and its _view-number_ is greater than $v$, and is primary of its view.
 3. Replica waits to receive response, then update its state. And send $PREPAREOK$ message for all uncommitted requests. 
