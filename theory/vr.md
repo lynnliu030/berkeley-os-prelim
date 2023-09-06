@@ -57,7 +57,7 @@ _Reasoning_:
 
 ### #2: View Change Protocol 
 * View change protocol must obtain information from logs of at least $f+1$ replica
-* Ensure all committed operations will be known (i.e. recorded in at least one of these logs)
+* Ensure all **committed** operations will be known (i.e. recorded in at least one of these logs)
 * Viewstamps: < _view-number_, _op-number_>   
     *  ensure operations that are "preparing" but not committed will not get lost
     *  i.e. a new leader may assign a previous used op-number to different operation, causing inconsistency
