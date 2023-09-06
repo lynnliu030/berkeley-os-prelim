@@ -74,9 +74,9 @@ Steps:
 3. The new primary execute (in order) any committed operations that it hadn't executed previously and send replies to clients, start accepting client request
 4. Other replicas receiving $STARTVIEW$ will
    *  replace their log with the new log, set their _op-number_, _view-number_, and change their status to _normal_
-   *  continue protocol for all operations not yet known to be commited by sending $PREPAREOK$ messages for these operations 
+   *  send $PREPAREOK$ messages for uncommitted ops 
 
 ### #3: Recovery Protocol 
 1. Replica $i$ sends a < $RECOVERY$, $v$, $r$ > nessage to all other replicas, where $v$ is its starting _view-number$
 2. Replica $i$ replies < $RECOVERY$ $RESPONSE$ $v$, $l$, $k$, $i$ > only when its status is $normal$ and its _view-number_ is greater than $v$, and is primary of its view.
-3. Replica waits to receive response, then update its state. And send $PREPAREOK$ message for all uncommitted requests. 
+3. Replica waits to receive response, then update its state. And send $PREPAREOK$ message for uncommitted ops. 
