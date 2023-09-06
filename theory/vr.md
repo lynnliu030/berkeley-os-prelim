@@ -70,7 +70,8 @@ _Reasoning_:
 Steps:
 1. Replica $i$ suspects primary is faulty, advances its _view-number_, set its status to _view-change_, and send < $DOVIEWCHANGE$, $v$, $l$, $k$, $i$ > to the new primary
    *  Not accept any $PREPARE$ message from old primary 
-2. When new primary receives $f+1$ messages, it selects the _most recent_ of those messages as the new log (i.e. with the largest viewstamp).
+2. When new primary receives $f+1$ messages
+   *  Set new log = the _most recent_ of those messages (i.e. with the largest viewstamp).
    *  Set _op-number_ to latest entry in new _log_
    *  Change status to _normal_
    *  Inform other replicas completion of view change by sending < $STARTVIEW$ $v$, $l$, $k$ >
