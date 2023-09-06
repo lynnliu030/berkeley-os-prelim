@@ -7,6 +7,7 @@ Resources are often **shared** among multiple users, applications, or services. 
    - what is the design goal of Xen? and how does it accomplish it? 
 2. What is container? how are they used today?
    - how do you implement containerization?
+   - should we use centralized or decentralized schedulers to handle containers 
    - what are some problems associated with containers? 
 3. What are the trade-offs between virtulization and container?
 4. How does exokernel compared to hypervisors?
