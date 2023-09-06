@@ -20,7 +20,7 @@ Ports and Messages: each memory object has an associated port. Tasks and threads
     * FS service read data from disk (i.e. communicate with disk driver through IPC)
     * Monolithic: syscall  
 
-Kernel's Role: protection, page lookup, Copy-on-Write (CoW) support, and IPC. It also manages paging and cache, interfacing with memory objects when page faults occur or when data needs to be written back to secondary storage.
+Kernel's Role: protection, page lookup, Copy-on-Write (CoW) support, and IPC (i.e. system call like `pipe()`, `msgget()`, `msgsnd()`, `msgrcv()`). It also manages paging and cache, interfacing with memory objects when page faults occur or when data needs to be written back to secondary storage.
 
 ## V.s. Microkernel 
 Mach focus on putting minimal functionalities into the kernel itself. 
