@@ -26,9 +26,11 @@ A _"failure"_ refers to the entire system not working, while a _"fault"_ implies
 ## Overview 
 In the realm of distributed systems, timing, fault tolerance, and data consistency are crucial factors. 
 
-The need to order events in a distributed system is imperative for consistency and coordination among different nodes. Lamport clock provides a way to order events across different parts of a distributed system without the need for synchronized global time.
+The need to order events in a distributed system is imperative for consistency and coordination among different nodes. Lamport clock provides a way to define event orderings in a distributed system, which is foundational for achieving data consistency and system coordination. 
 
-Building upon the ability to order events, the focus shifts to ensuring data consistency between data replicas stored in different machines. VR and pBFT are two replication protocol that enable systems to execute despite faults. VR deals with the crash-stop or crash-recovery model, while pBFT deals with Byzantine faults. 
+Building upon Lamport clock, the focus shifts to ensuring data consistency between data replicas. VR and pBFT are two replication protocol that enable systems to continue execute despite faults. VR deals with the crash-stop or crash-recovery model, while pBFT deals with Byzantine faults. 
+
+While Lamport clocks operate primarily under synchronous assumptions, both VR and pBFT extend these ideas to systems that can function under various timing models, including partial asynchrony.
 
 ## Self-guided Questions 
 ### Lamport Clocks 
