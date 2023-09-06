@@ -11,8 +11,13 @@ This technique is **complex** and has **high performance cost** particularly for
    *  guests have read access to PT but must update them through VMM 
    *  can do batching of updates 
 2. CPU
-   *  guest OS runs at lower ring than host
+   *  replaces nonvirtualizable instructions with **hypercalls** that communicate directly with the VMM
+   *  guest OS uses Ring 1, Xen uses Ring 0
+   *  guest registers trap vector table with VMM
+   *  system calls utilize handlers for faster operation 
    *  guests are aware of virtual and real time
-   *  replaces nonvirtualizable instructions with hypercalls that communicate directly with the VMM 
 3. I/O
-   *  access is through sync I/O rings 
+   *  data transfer between Xen and guest OS is through sync I/O rings 
+
+## Problem 
+Bad portability and maintenance cost because of the need to modify guest OS. 
