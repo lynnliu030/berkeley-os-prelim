@@ -3,7 +3,11 @@ Kerberos is an authentication network protocol developed by MIT to provide robus
 
 The protocol is based on generating tickets 🎫.
 
-## Key Techniques 
+## Goal
+* Transparency
+* Security 
+
+## Key Techniques: Ticket  
 There are three components in Kerberos transactions: 
 * **KDC (key distribution center)**
   *  Store a copy of all keys (i.e. client keys, service key, and TGS keys) for encryption and decryption purposes
