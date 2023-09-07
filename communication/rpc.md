@@ -4,11 +4,11 @@
 * **Marshalling**: The client program initiates the RPC by calling the stub procedure, passing the necessary parameters. The client stub then **marshals (packages) these parameters** into a format suitable for transmission over a network.
 2. **Communication to Kernel Space**
 * System Call: After marshalling, a system call is made to pass the data from user space to kernel space.
-* This involves a data copy operation where data is copied from the user space memory to the kernel space memory.
+* Data is copied from the user space memory to the kernel space memory.
 3. **Transmission Over Network** (From Kernel Space)
 * Network IO: The kernel then transmits this data packet over the network to the remote system.
 4. **Reception at Remote System** (In Kernel Space)
-* the data packet is first received in the kernel space of the remote system.
+* Data packet is first received in the kernel space of the remote system.
 5. **Communication to User Space at Remote System**
 * system Call: Through a system call, the data packet is moved from kernel space to user space, involving another data copy operation.
 6. **Remote Processing** (In User Space)
