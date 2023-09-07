@@ -85,7 +85,7 @@ User threads are managed by user level libraries (e.x. scheduling, sync), can be
 ### Kernel threads (one-to-one) 
 **Pros**: OS sees and understand threads, sync, blocking, etc. 
 
-**Cons**: 1) Performance limitations: must go to OS for all operations 2) Lack of portability and flexibility: may have limits on # of threads, etc.
+**Cons**: 1) Performance limitations: must go to OS for all operations (i.e. creation, synchronization, scheduling) 2) Lack of portability and flexibility: may have limits on # of threads, etc.
 
 ### Papers
 Scheduler Activations has a hybrid approach to enable exchange of information between user and kernel, and the main idea is to coordinate user level and kernel level scheduling through scheduler activations. 
