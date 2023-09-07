@@ -33,7 +33,10 @@ Processes initially set up a region of their virtual memory to use for IPC. Then
 **Cons**: synchronization overhead 
 
 ## RPC: an abstraction for communication  
-Just a PL abstraction, create wrappers so calling a function on another machine just feels like calling a local function. The stub function removes the pain of packing function arguments and results into messages by automating it. This also systems to communicate across multiple languages. Protobuf is an example of a serialization/deserialization format across languages.
+What is RPC? 
+* Just a PL abstraction, create wrappers so calling a function on another machine just feels like calling a local function.
+* The _stub function_ removes the pain of packing function arguments and results into messages by automating it.
+* This also systems to communicate across multiple languages. Protobuf is an example of a serialization/deserialization format across languages.
 
 LRPC deals with making RPC lightweight. Active Messages offers an alternative model where message handlers are triggered to initiate computation. 
 
