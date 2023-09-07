@@ -15,16 +15,21 @@ Key problems of original AFS prototype via extensive benchmarking:
 
 ## Techniques
 
+### Scale 
 **Cache mgmt (callback interface)**: rather than checking with server on each open, AFS client instead cache entries of directories and symbolic links, and assume the cache entries are valid unless notified (_callback_). This reduce the cache validation traffic and reduce loads on server. 
 * Stateful: server keeps track of states, which make crash recovery harder!
   
-Name resolution: move the name resolution from server to client, client walks and maps the pathname to Fid (i.e. <vol #, vnode #, uniquifier>. 
+**Name resolution**: move the name resolution from server to client, client walks and maps the pathname to Fid (i.e. <vol #, vnode #, uniquifier>. 
 
-Server process: a server process per client did not scale well; instead use a single process to service all clients, use threads instead of processes. 
+**Server process**: a server process per client did not scale well; instead use a single process to service all clients, use threads instead of processes. 
 
+### Usability 
 Storage representation: instead of pathname, access files by their inode. 
 
-AFS usability changes: provides a true global namespace to clients and ensure all files were named the same way on all client machines (v.s. NFS); considers security and incorporates mechanisms to authenticate users as well as providing user-managed access control; simpler management of servers. 
+AFS usability changes: 
+* true global namespace to clients and ensure all files were named the same way on all client machines (v.s. NFS)
+* considers security and incorporates mechanisms to authenticate users as well as providing user-managed access control
+* simpler management of servers. 
 
 ## Crash recovery 
 Crash recovery is more involved than NFS with the callback mechanism (e.x. may miss callback recall messages during crash). When client recovers, it needs to check with server again. 
