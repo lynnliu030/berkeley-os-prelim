@@ -41,4 +41,4 @@ Coda wants to support disconnected operation, i.e. enables a client to continue 
     2. Conflicts are detected and resolved later
     3. Pros: high availability
     4. Cons: conflicting writes, relies on resolution protocol  
-    5. Rational of using this: chance of conflicts is low because low degree of write share in UNIX 
+    5. Rational of using this: chance of conflicts is low because **low degree of write share in UNIX**
