@@ -21,7 +21,9 @@ User-mode process will copy data into buffer, then issue a system call to reques
 
 E.x. pipe, message queue, RPC 
 
-**Cons**: 1) one data exchange invokes two syscalls, one read, one write. 2) transferred data are copied twice (i.e. kernel memory, receiving process). 
+**Cons**: 
+1) one data exchange invokes two syscalls, one read, one write
+2) transferred data are copied twice (i.e. kernel memory, receiving process). 
 
 ### Shared memory 
 Processes initially set up a region of their virtual memory to use for IPC. Then it issues a system call to request that the kernel make the region shared. Other processes would do the same. The processes can read from and write to the region as normal, and there is no explicit syscall required to read new data. 
