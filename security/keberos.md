@@ -57,3 +57,46 @@ In the Kerberos authentication protocol, a user first authenticates with the aut
 1. Mutual Trust via Third Party: The AS and TGS act as trusted third parties. The mutual trust between a user and a service is established indirectly via trust in these servers.
 
 2. Scalability: Because users don't interact directly with service servers for authentication (but go through TGS instead), the system is more scalable. Each service doesn’t need to implement its authentication logic; it just needs to be able to decrypt a message from the TGS.
+
+## Simplified descriptions 
+Key Components:
+KDC (Key Distribution Center): A trusted server that handles authentication.
+
+Authentication Server (AS): Confirms who users are.
+Ticket Granting Server (TGS): Gives tickets for accessing services.
+Client: A user who wants to access a service.
+
+Service: What the client wants to use, like a database or a file server.
+
+Simplified Protocol Steps:
+Initial Authentication:
+
+Client sends a login request to AS in the KDC.
+AS checks the client's identity and sends back two encrypted messages (M1 and M2).
+Request for Service Ticket:
+
+Client uses their password to decrypt M1, gets a special key (TGS session key).
+Client then sends a new request to TGS with M2 (Ticket Granting Ticket), the desired service's ID, and another message (M4).
+TGS validates the request and sends back two new encrypted messages (M5 and M6).
+Accessing the Service:
+
+Client decrypts M5 to get another special key (Service Session Key).
+Client sends M6 (the Service Ticket) and a new message (M7) to the service.
+Service decrypts M6 and M7 and, if everything checks out, allows access.
+Verification:
+
+Service sends a final message (M8) back to the client to confirm successful authentication.
+Why It Works:
+Mutual Trust via Third Party: The client and the services both trust the KDC (AS & TGS). They never need to trust each other directly.
+
+Scalability: Since all services rely on TGS for authentication, it's easier to scale. New services can easily be added without having to design a new authentication scheme for each.
+
+Security: Each step involves encryption and time-stamping, making it tough for unauthorized users to gain access or replay old messages.
+
+Diagram:
+Client ----> AS: Initial request
+AS ----> Client: M1 and M2
+Client ----> TGS: M2, M3, and M4
+TGS ----> Client: M5 and M6
+Client ----> Service: M6 and M7
+Service ----> Client: M8
