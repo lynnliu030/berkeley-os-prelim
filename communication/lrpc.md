@@ -1,5 +1,5 @@
 # Lightweight Remote Procedure Call (LRPC) 
-This paper presents a lightweight communication facility (based on RPC) designed to handle communication where calling process and the called process are on the same machine. Through a profiling based approach, they identified that most RPC was local and small size. 
+This paper presents a lightweight communication facility (based on RPC) designed to **handle communication where calling process and the called process are on the same machine**. Through a profiling based approach, they identified that **most RPC was local and small size**. 
 
 If both processes reside on the same machine, original RPC involves redundant data copy and operations, including network stacks, marshaling / unmarshaling, XDR, etc. Thus they optimize for this case to increase performance. 
 
