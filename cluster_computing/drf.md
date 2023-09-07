@@ -10,6 +10,11 @@ DRF allocates resources according to agents’ proportional demands, in a way th
 
 <img width="513" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/a6ba77e7-52cd-4fde-85ed-2313c6f65217">
 
+### Properties 
+- **Sharing incentive**: user is no worse off than a cluster with 1 / n resources
+- **Strategy proof**: user should not benefit by lying about demands
+- **Pareto efficiency**: not possible to increase one user without decreasing another
+- **Envy free**: user should not desire the allocation of another user
 
 ### Examples
 <img width="481" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/3ce30d4f-9e2b-4482-844f-ffb97f8f9769">
