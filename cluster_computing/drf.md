@@ -1,7 +1,7 @@
 # Dominant Resource Fairness: Fair Allocation of Multiple Resource Types (2011) 
 To address the problem of fair resource allocation in a system containing different resource types, the paper proposes Dominant Resource Fairness (DRF), a generalization of max-min fairness to multiple resource types. 
 
-DRF allocates resources according to agents’ proportional demands, in a way that equalizes the shares that agents receive of their most highly demanded resources. 
+DRF **allocates resources according to agents’ proportional demands, in a way that equalizes the shares that agents receive of their most highly demanded resources**. 
 
 - Dominant resource: resource user has the biggest share of
 - Dominant share: fraction of the dominant resource user is allocated
