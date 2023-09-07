@@ -11,15 +11,17 @@ The application isn't blocked (like async I/O) but any output (e.x. network, sen
 
 **_External Sync I/O_**: 
 * Returns control to the application before the data is committed to the disk but buffers all output that is causally dependent on the uncommitted modification.
-* It only externalizes (sends to screen, network, etc.) the output after the modification commits, ensuring the guarantees akin to synchronous I/O while avoiding frequent blocks, thus nearing asynchronous I/O performance.
+* It only externalizes (sends to screen, network, etc.) the output after the modification commits
 * Multiple file modifications are grouped together and committed as a single transaction, making the commits atomic.
 
-_**Output triggered commits**_: The data is only committed when there is an external output that depends on the uncommitted data, thus striking a balance between throughput and latency. It ensures the system is not frequently blocked waiting for data to be written to disk.
+_**Output triggered commits**_: data is only committed when there is an external output that depends on the uncommitted data
 
 Example: If a process modifies data but produces no external output based on this modification, the system can delay the commitment of this data to optimize throughput. If output is generated that relies on this modification, the system triggers a commit to minimize latency.
 
-_**Tracking causal dependencies**_: The system tracks dependencies between file modifications and external outputs. This ensures the external outputs are reliable and consistent with the sync I/O model. 
-
+_**Tracking causal dependencies**_: tracks dependencies between file modifications and external outputs. This ensures the external outputs are reliable and consistent with the sync I/O model. 
+* marking process with dependencies: i.e. cannot externalize any output until some transaction commits
+* if a marked process shares information with another process (IPC), another process inherits the same dependencies 
+    
 Example: xsyncfs adds modifications to a file system transaction and returns control to the process without waiting for the transaction to commit but taints it with a commit dependency. If the process tries to write to an external device, the output is buffered until all related disk transactions commit.
 
 The new model builds upon a system called Speculator, initially targeted at improving network performance, to track and propagate causal dependencies.
