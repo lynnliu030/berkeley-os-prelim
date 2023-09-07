@@ -5,7 +5,7 @@ Reference:
 
 Mach is an early predecessor of microkernel, providing the functionality of UNIX when desired but is generally lighter weight. It is a object-oriented semi-user-extensible memory system. 
 
-In Mach, memory is viewed as **"abstract objects"** comprising collections of bytes with actions. It is easier for developers to extend system functionalities. For instance, file systems are managed through these "memory objects," and operations like reading and writing files are performed via these objects.
+In Mach, memory is viewed as **"abstract objects"** comprising collections of bytes with actions. It is easier for developers to extend system functionalities. For instance, file systems are managed through these "memory objects," and operations like reading and writing files are performed via these objects. **File systems are managed through memory objects.** 
 
 Single level store is synonymous with virtual memory, that is that DRAM acts as a cache for secondary storage. By paging in files into memory, it avoids extra intermediate buffers that are allocated during copying.
 
