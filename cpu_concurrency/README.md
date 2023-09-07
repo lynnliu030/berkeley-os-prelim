@@ -16,6 +16,8 @@ Inter-process communication (IPC) is a mechanism that allows processes to commun
 ### Message passing 
 Whenever a piece of data is to be exchanged, the process will invoke the kernel with a request to send information to target process. User-mode process will copy data into buffer, then issue a system call to request the data to be transferred. Once kernel is invoked, it will copy the transferred data first to its own memory. Then target process do similar things. 
 
+E.x. pipe, message queue, that sits in the kernel space 
+
 **Cons**: 1) one data exchange invokes two syscalls, one read, one write. 2) transferred data are copied twice (i.e. kernel memory, receiving process). 
 
 ### Shared memory 
