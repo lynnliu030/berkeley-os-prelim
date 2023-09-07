@@ -46,7 +46,8 @@ LFS uses write buffering to keep track of updates in memory before writing to di
     *  Crashes can happen in between 
 *  Write to checkpoint regions fails
     *  Keeps two CR, write to them alternatively
-    *  Single CR write: header (ts), body, last block (ts)
+    *  Only overwrite on checkpoint at a time 
+    *  Use checksum / timestamps to identify the newest checkpoint
     *  Detect crash with inconsistent ts 
 *  Write to segment fails: roll-forward  
     *  Start with the last CR, find the end of log
