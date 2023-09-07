@@ -44,7 +44,7 @@ Journaling techniques add some overheads to each write but recovers more quickly
 
 ## Other Solutions 
 1. Software updates
-2. Copy-on-write (COW): like in LFS
+2. **Copy-on-write (COW)**: **like in LFS**
    *   Technique: never overwrite files or directories in place
    *   Place new updates to unused locations
    *   After a # of updates, COW FS filps root structure of FS to include pointers
