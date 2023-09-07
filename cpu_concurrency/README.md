@@ -10,23 +10,6 @@ Running processes on multicore, multiprocessor systems require coordination, con
 * Process = set of threads + collection of resources
 * Thread = a single execution sequence within a process
 
-## Communication [IPC]: message passing v.s shared memory 
-Inter-process communication (IPC) is a mechanism that allows processes to communicate with each other and synchronize their actions. Processes can communicate with each other through either shared memory model or message passing model.
-
-### Message passing 
-Whenever a piece of data is to be exchanged, the process will invoke the kernel with a request to send information to target process. User-mode process will copy data into buffer, then issue a system call to request the data to be transferred. Once kernel is invoked, it will copy the transferred data first to its own memory. Then target process do similar things. 
-
-E.x. pipe, message queue, that sits in the kernel space 
-
-**Cons**: 1) one data exchange invokes two syscalls, one read, one write. 2) transferred data are copied twice (i.e. kernel memory, receiving process). 
-
-### Shared memory 
-Processes initially set up a region of their virtual memory to use for IPC. Then it issues a system call to request that the kernel make the region shared. Other processes would do the same. The processes can read from and write to the region as normal, and there is no explicit syscall required to read new data. 
-
-**Pros**: one-time penalty during set-up phase 
-
-**Cons**: synchronization overhead 
-
 ## Programming model: event v.s thread 
 I find this article very interesting: https://berb.github.io/diploma-thesis/original/043_threadsevents.html. 
 
