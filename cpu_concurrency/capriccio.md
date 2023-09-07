@@ -1,13 +1,13 @@
 # Capriccio: Scalable Threads for Internet Services (2003) 
-This paper proposes Capriccio, a scalable thread package for use with high-concurrency servers. The main proposal is to use user-level threads instead of event-based models (i.e. SEDA) to achieve high performance without sacrificing the ease of programming. 
+This paper proposes Capriccio, a scalable thread package for use with high-concurrency servers. The main proposal is to use **user-level threads** instead of event-based models (i.e. SEDA) to achieve high performance without sacrificing the ease of programming. 
 
 Its approach is three-fold: 
 
-**Scalability**: Capriccio uses user-level threads coupled with cooperative scheduling to manage many threads efficiently. User-level threads are preferred over kernel threads for their flexibility and performance advantages, like reduced synchronization overhead.
+1. **Scalability**: Capriccio uses user-level threads coupled with cooperative scheduling to manage many threads efficiently. User-level threads are preferred over kernel threads for their flexibility and performance advantages, like reduced synchronization overhead.
 
-**Linked Stack**: Traditional stack allocation methods are not suitable for programs managing many threads. Capriccio uses a dynamic stack allocation technique that employs linked chunks, which are managed through compile-time analysis and runtime checks.
+2. **Linked Stack**: Traditional stack allocation methods are not suitable for programs managing many threads. Capriccio uses a dynamic stack allocation technique that employs linked chunks, which are managed through compile-time analysis and runtime checks.
 
-**Resource-aware Scheduler**: The scheduler views the application as a sequence of stages, separated by blocking points, forming a "blocking graph". This graph is used to make application-specific scheduling decisions to maximize resource utilization without reaching bottlenecks.
+3. **Resource-aware Scheduler**: The scheduler views the application as a sequence of stages, separated by blocking points, forming a "blocking graph". This graph is used to make application-specific scheduling decisions to maximize resource utilization without reaching bottlenecks.
 
 ## Limitations 
 * Does not completely eliminate kernel crossings.
