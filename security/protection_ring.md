@@ -7,6 +7,15 @@ The paper discusses protection of segment-based virtual memory as found in Multi
 * Multics segment descriptors indicate the highest ring that is allowed to read or write the segment
 * Rings with less privilege of the system do not have execute permissions 
 
+## Protection rings 
+Hierarchical levels of security that help to define the privileges and access rights that different processes or programs have when interacting with the system. 
+
+Or, a strategy in computer architecture to govern how different programs can interact with the system's resources, helping to enhance security and system stability.
+
+### Implementation in this paper 
+Recorded in segment descriptor words and are checked by the hardware upon each reference. 
+
+
 ## Hardware support needed
 * If OS is designed for portability (i.e. across different hardware platforms), typically only 2 protection modes are used (i.e. user and supervisor) 
 * Fault containment: faults only affect lower rings (ring 3 can only affect ring 4)
