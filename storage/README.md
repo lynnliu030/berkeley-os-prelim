@@ -36,11 +36,15 @@ There is a design trade-off of FS depending on whether they are optimized for la
 For example, GFS chooses larger block size to reduce the metadata size and improve sequential access performance. Traditional FS uses a much smaller block size. 
 
 ## Synchronous v.s Asynchronous I/O 
-Synchronous I/O: application blocks until the I/O completes
+**Synchronous I/O**: application blocks until the I/O completes
+- Pros: durability and reliability
+- Cons: slow 
 
-Asynchronous I/O: enable application to issue an I/O request and return control immediately to the caller, before the I/O has completed
+**Asynchronous I/O**: enable application to issue an I/O request and return control immediately to the caller, before the I/O has completed
 * **Poll**: application poll the system via system call to determine whether I/O has completed
 * **Interrupt**: UNIX signals to inform applications when async I/O completes
+- Pros: performance
+- Cons: durability and reliability 
   
 ## Sequential v.s random reads / writes 
 ### Sequential access 
