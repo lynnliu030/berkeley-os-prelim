@@ -35,7 +35,7 @@ GFS is a scalable distributed file system for large distributed data-intensive a
 **Master**: replicated logs and checkpoints, has a shadow master 
 
 ## Relaxed consistency 
-GFS deploys a relaxed consistency model: data is appented _atomically_ _at least once_. GFS assumes that client applications can handle the inconsistent state: i.e. filter out occasional padding and duplicate using checksums. This also helps improving performance. 
+GFS deploys a relaxed consistency model: data is appented **_atomically_ _at least once_**. GFS assumes that client applications can handle the inconsistent state: i.e. filter out occasional padding and duplicate using checksums. This also helps improving performance. 
 
 ## Limitations 
 Only one GFS master might become the single point of bottleneck for metadata operations. 
