@@ -42,3 +42,6 @@ Basic idea: Replica can be faulty! (i.e. assign wrong timestamp, etc.)
 Solution: add an extra phase _pre-prepare_ to the protocol to check various details of what the primary is doing and refuse to process messages that are not what they should be. 
 
 Drawback: all-to-all communication with $O(n^2)$ 
+
+### View Change Protocol 
+<img width="803" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/3dccb62a-e592-4c94-89b4-160d92416792">
