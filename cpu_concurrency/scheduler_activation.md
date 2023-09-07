@@ -1,5 +1,5 @@
 # Scheduler Activations: Effective Kernel Support for the User-Level Management of Parallelism (1991) 
-The paper presents a mechanism called "scheduler activations" to improve the management of thread-level parallelism. It tries to address the limitations found in both user-level threads and kernel-level threads by offering a method for user-level thread libraries to communicate with the kernel scheduler. The paper outlines various techniques such as upcalls to communicate state information between the user and kernel levels and also discusses the notion of "virtual processors" provided by the kernel to the user-level threads for scheduling.
+The paper presents a mechanism called "scheduler activations" to improve the management of thread-level parallelism. It tries to address the limitations found in both user-level threads and kernel-level threads by offering a method for user-level thread libraries to communicate with the kernel scheduler. The paper outlines various techniques such as **upcalls** to communicate state information between the user and kernel levels and also discusses the notion of "virtual processors" provided by the kernel to the user-level threads for scheduling.
 
 ## V.s. user thread
 Avoid unnecessary blocking and support processor allocation: 
