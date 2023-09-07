@@ -16,7 +16,15 @@ An event is something happening at one node (i.e. sending or receiving messsage,
     - Transitive: if $a \rightarrow b$ and $b \rightarrow c$, then $a \rightarrow c$
     - Event $a$  and event $b$ are concurrent when $a$ hasn’t happened before $b$ and $b$ hasn’t happened before $a$
 
-Lamport introduces **logical clock**, which is the way to count number of events that have occurred. The paper offers a simple algorithm for advancing the logical clocks in a way that respects the happened-before relationship.
+Lamport introduces **logical clock**, which is the way to count number of events that have occurred.
+
+- $a \rightarrow b$  implies $C(a) < C(b)$
+- **Partial ordering** is defined
+    - $C_i(a) < C_i(b)$ if $a$ happens before $b$ in the same process $i$. This can be implemented using a simple counter in the given process.
+    - When process $i$ sends message at event $a$ and process $j$ ack the message at event $b$, then $C_i(a) < C_j(b)$
+  
+### Synchronization Algorithm 
+The paper offers a simple algorithm for advancing the logical clocks in a way that respects the happened-before relationship.
 1. Each node maintains a counter $t$, incremented on local event $e$
 2. When the node sends the message, attach current $t$ to messages sent over the network
 3. Recipients move its clock forward to timestamp in the message (if greater than the local counter), then increments 
