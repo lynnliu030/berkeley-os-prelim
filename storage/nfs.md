@@ -3,7 +3,7 @@ NFS is a **distributed file system** designed to make sharing of filesystem reso
 
 1. **Crash recovery** (main goal): recover easily from server crashes
 3. Transparency and UNIX semantics: access remote files as local 
-4. Reasonable performance
+4. **Reasonable performance**
 5. Machine & os independence: being able to supply files to different types of clients 
 
 ## Techniques 
