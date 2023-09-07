@@ -55,7 +55,7 @@ Techniques
 ### View Change Protocol 
 <img width="803" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/3dccb62a-e592-4c94-89b4-160d92416792">
 
-*   _certificate_: a collection of matching valid signed messages from $2f+1$ different replicas, representing a proof that certain thing has happened
+*   _certificate_: a collection of matching valid signed messages from $2f+1$ different replicas, representing **a proof that certain thing has happened**
       *   messages are signed, so replica is able to evaluate a certificate and decide for itself whether it is valid    
 *  Need to use PREPARE certificates (i.e. composed of the messages replicas received while running the protocol)
       *  Consists of the PREPREPARE message from primary and $2f$ PREPARE message all for the same request( i.e. represented as the message digest) from the same viewstamp. 
