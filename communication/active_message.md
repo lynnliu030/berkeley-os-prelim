@@ -14,3 +14,7 @@
 3. _Message Receiving_: receiver reads the Active Message, immediately executes the handler, passing in the provided arguments.
 
 4. _Handler Execution_: The handler, being a lightweight piece of code, carries out its operation quickly and integrates the received data into the ongoing computation at the receiver's end. The idea is to **get the data "out of the network and into computation"** as quickly as possible.
+
+## Use today 
+* Microservices: benefit from the same principal, services being able to respond quickly
+* Serverless computing: execute small functions or handlers immediately upon receiving specific messages or events, creating efficient, reactive systems 
