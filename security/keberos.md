@@ -4,20 +4,48 @@ Kerberos is an authentication network protocol developed by MIT to provide robus
 The protocol is based on generating tickets 🎫.
 
 ## Goal
-* Transparency
-* Security 
+* Security: To protect sensitive data in open networks.
+* Transparency: To facilitate straightforward authentication for users without the cumbersome need for repeated logins.
 
 ## Key Techniques: Ticket  
 There are three components in Kerberos transactions: 
 * **KDC (key distribution center)**
   *  Store a copy of all keys (i.e. client keys, service key, and TGS keys) for encryption and decryption purposes
-  *  **Authentication server (AS)**: verifying users and authenticating them to the network
-  *  **Ticket granting server (TGS)**: responsible for issuing tickets to requested services    
-* **Client**: a user requesting access
-* **Service**: is what the client requesting access to
-  *   E.x. file share servers, DBs, printers, web servers, etc.
+  *  **Authentication server (AS)**: Validates users when they log in
+  *  **Ticket granting server (TGS)**: Issues tickets for users to access different services
+* **Client**: The user who wants to access a service.
+* **Service**: The network resources like files servers or databases that the client wants to access.
  
-## Protocol 
+## Protocol Simple Explain 
+1. **Initial Authentication**:
+    * Client sends login details to AS
+    * AS replies with two messages
+       * Ticket Granting Ticket (TGT) encrypted with TGS secret key
+       * M1: TGS session key encrypted with client's secret key
+2. **Request for Service Ticket**:
+    * Decrypt M1 with secret key
+    * Request access ot a service by taking to TGS
+        * Send back TGT
+        * Encrypt user authentication with TGS session key
+        * M2: <service ID, request lifetime>
+    * TGS receives
+        * check service is valid
+        * decrypt TGT with session key, and decrypt user authentication
+    * TGS sends back
+        * M3: Service session key encrypted by TGS session key
+        * Service ticket (ST): encrypted by TGS secret key
+3. **Accessing the service**:
+    * User decrypt M3 and get servie session key
+    * Use it to encrypt user authentication and send back service ticket
+4. **Verification**
+    * Service decrypt ST to get session key and decrypt user auth
+    * If matches, send back service authenticator encrypted by TGS session key
+    * Confirming authentication success and establish secure session
+
+## Pros 
+Trust is incrementally built through a series of encrypted ticket exchanges, and authentication is validated at several stages through encrypted, timestamped tickets
+
+## Complete Protocol 
 In the Kerberos authentication protocol, a user first authenticates with the authentication server to obtain a Ticket Granting Ticket (TGT). When the user needs to access a network service, they use this TGT to request a service-specific ticket from the Ticket Granting Service (TGS), also part of the KDC. This system minimizes the number of times a user needs to enter their password for secure service access. Each step involves encrypted messages and unique session keys to ensure secure communication and prevent unauthorized access.
 
 
@@ -61,46 +89,3 @@ In the Kerberos authentication protocol, a user first authenticates with the aut
 1. Mutual Trust via Third Party: The AS and TGS act as trusted third parties. The mutual trust between a user and a service is established indirectly via trust in these servers.
 
 2. Scalability: Because users don't interact directly with service servers for authentication (but go through TGS instead), the system is more scalable. Each service doesn’t need to implement its authentication logic; it just needs to be able to decrypt a message from the TGS.
-
-## Simplified descriptions 
-Key Components:
-KDC (Key Distribution Center): A trusted server that handles authentication.
-
-Authentication Server (AS): Confirms who users are.
-Ticket Granting Server (TGS): Gives tickets for accessing services.
-Client: A user who wants to access a service.
-
-Service: What the client wants to use, like a database or a file server.
-
-Simplified Protocol Steps:
-Initial Authentication:
-
-Client sends a login request to AS in the KDC.
-AS checks the client's identity and sends back two encrypted messages (M1 and M2).
-Request for Service Ticket:
-
-Client uses their password to decrypt M1, gets a special key (TGS session key).
-Client then sends a new request to TGS with M2 (Ticket Granting Ticket), the desired service's ID, and another message (M4).
-TGS validates the request and sends back two new encrypted messages (M5 and M6).
-Accessing the Service:
-
-Client decrypts M5 to get another special key (Service Session Key).
-Client sends M6 (the Service Ticket) and a new message (M7) to the service.
-Service decrypts M6 and M7 and, if everything checks out, allows access.
-Verification:
-
-Service sends a final message (M8) back to the client to confirm successful authentication.
-Why It Works:
-Mutual Trust via Third Party: The client and the services both trust the KDC (AS & TGS). They never need to trust each other directly.
-
-Scalability: Since all services rely on TGS for authentication, it's easier to scale. New services can easily be added without having to design a new authentication scheme for each.
-
-Security: Each step involves encryption and time-stamping, making it tough for unauthorized users to gain access or replay old messages.
-
-Diagram:
-Client ----> AS: Initial request
-AS ----> Client: M1 and M2
-Client ----> TGS: M2, M3, and M4
-TGS ----> Client: M5 and M6
-Client ----> Service: M6 and M7
-Service ----> Client: M8
