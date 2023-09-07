@@ -22,3 +22,6 @@ APIs for Memory Control: A set of application programming interfaces (APIs) that
 User-level Page Fault Handling: The paper argues that the cost of a page fault is too high to be abstracted away by the kernel, so user-level fault handling might be incorporated to decrease this time.
 
 Dynamic Algorithms: The application might use special algorithms to decide when to evict or keep certain pages in the cache.
+
+## V.s Microkernel 
+Similarity in simplified kernel by allowing applications to manage their own physical memory cache external to the kernel, and giving higher-degree of control to the user space. 
