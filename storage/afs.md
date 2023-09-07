@@ -32,6 +32,7 @@ Crash recovery is more involved than NFS with the callback mechanism (e.x. may m
 Server recovery is also harder, as callbacks are kept in memory. Methods to deal with it can be having server sends message ("don't trust cache!") or client checks with server periodically with heartbeat. NFS server recovery is immediate as it doesn't keep any states. 
 
 ## Performance 
-Whole-file caching in AFS: good when large files are frequently re-read, as it can serve the files directly from the local disk cache and reduce server load and network latency. 
+**Whole-file caching in AFS**: good when large files are frequently re-read, as it can serve the files directly from the local disk cache and reduce server load and network latency. 
+* files reads usually went to the local disk cache (and potentially local memory) 
 
-Block-level caching in NFS: better in use-cases where only a small subset of a large file is read or modified. NFS can fetch or update only the necessary portions of a file, making it more efficient for workloads involving random or partial file access. Also overwriting existing files is better in NFS, as it avoids the initial read operation that AFS requires to fetch the whole file before overwriting.
+**Block-level caching in NFS**: better in use-cases where only a small subset of a large file is read or modified. NFS can fetch or update only the necessary portions of a file, making it more efficient for workloads involving random or partial file access. Also overwriting existing files is better in NFS, as it avoids the initial read operation that AFS requires to fetch the whole file before overwriting.
