@@ -19,7 +19,7 @@ Other paper:
 * AFS optimizes distributed FS performance by using the callback mechanism, putting some states in the server
 * CODA optimizes for availability when the client is disconnected, by using server and client replication, and optimisitic replica control for conflict resolution
 * GFS is modern distributed file system that optimizes in DC environment where there is large file, append-only workloads and faults are normal. It deploys a centralized scheduling scheme, decouple control and data (use large chunks), uses data replication to improve scalability and fault tolerance.
-* External synchrony balances the durability v.s performance trade-offs via a user-oriented approach
+* External synchrony balances the durability v.s performance trade-offs of synchronous and asynchronous I/O via a user-oriented approach
 * Chord optimizes for scalable information lookup in large-scale p2p distributed storage system 
 
 ## Small v.s large files 
