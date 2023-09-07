@@ -9,6 +9,12 @@
 Lamport presents the classic paper about how to define ordering of events in system of colleciton of nodes. 
 
 An event is something happening at one node (i.e. sending or receiving messsage, or local execution step). The key idea about this paper is the concept about **"happened-before" relationship**, which gives us a way to compare two events from potentially different processes.
+- We only have **partial order** in the system
+- Definition
+    - In the same process, if event $a$ comes before event $b$, then $a \rightarrow b$
+    - When process $i$ sends some message at $a$ to process $j$ and process $j$ ack this message at $b$, then $a \rightarrow b$
+    - Transitive: if $a \rightarrow b$ and $b \rightarrow c$, then $a \rightarrow c$
+    - Event $a$  and event $b$ are concurrent when $a$ hasn’t happened before $b$ and $b$ hasn’t happened before $a$
 
 Lamport introduces **logical clock**, which is the way to count number of events that have occurred. The paper offers a simple algorithm for advancing the logical clocks in a way that respects the happened-before relationship.
 1. Each node maintains a counter $t$, incremented on local event $e$
