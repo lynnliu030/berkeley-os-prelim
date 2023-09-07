@@ -45,5 +45,6 @@ In summary, the limitations are:
 * Overhead: carry timestamp information
 
 Scenarios where they are insufficient:
+* Synchronization of concurrent events: google doc, collaborative editing, gaming 
 * Global total ordering requirements: i.e. tradings 
 * Timestamp transactions: i.e. financial market, where microsecond precision is required for transaction ordering, relying on logical clock can introduce anomalies 
