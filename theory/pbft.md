@@ -18,7 +18,7 @@ Exsiting BFT algorithms assume synchrony for safety, but this is dangerous since
     *  Then get $N - f$ replicas, worst-case contains $f$ Byzantine faulty replicas
     *  $N - f - f$ none-faulty nodes needs to be larger than $f$ faulty nodes to reach agreement
     *  So $N - 2f > f$, we get $N$ is at least $3f+1$
- 
+
 ### Architecture
 * Primary: order client request
     * execute and reply
@@ -31,6 +31,16 @@ Exsiting BFT algorithms assume synchrony for safety, but this is dangerous since
     *  #2: use cryptography - all msgs signed by senders
         *  goal: ensure secret keys used by honest is not known to adversay
 
+### Security techniques
+Goal: Prevent spoofing and elays and corrupting messages
+
+Techniques 
+*   Public-key signature: one cannot impersonate other
+      *   E.x. messages between clients and the primary 
+*   Message authentication code, collision-resistent hash, digest: one cannot tamper other's meesages
+      *   Digest: crytographic hash of a piece of data, reduce amount of data to be sent
+      *   Collision-resistent hash: infeasible to find two different inputs that produce the same hash output 
+ 
 ## Protocol: trust group not individuals 
 
 ### Normal Operation Protocol 
@@ -38,10 +48,12 @@ Exsiting BFT algorithms assume synchrony for safety, but this is dangerous since
 
 <img width="649" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/e5db621c-2e15-48be-9ac4-3bf15445a02c">
 
-Basic idea: Replica can be faulty! (i.e. assign wrong timestamp, etc.)
-Solution: add an extra phase _pre-prepare_ to the protocol to check various details of what the primary is doing and refuse to process messages that are not what they should be. 
-
-Drawback: all-to-all communication with $O(n^2)$ 
+* Also, client only accepts a result if it receives $f+1$ authenticated messages with the same result 
+* Why pre-prepare stage? 
+      *   Basic idea: Replica can be faulty! (i.e. assign wrong timestamp, etc.)
 
 ### View Change Protocol 
 <img width="803" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/3dccb62a-e592-4c94-89b4-160d92416792">
+
+### Limitations 
+Drawback: all-to-all communication with $O(n^2)$ 
