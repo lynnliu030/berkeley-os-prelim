@@ -9,7 +9,7 @@ When we think about communication, we need to think about multiple layers.
    *  what abstractions of communication should we use when building a distributed system? (i.e. RPC) 
    *  how to make it efficient and fast? how to make it secure? 
 
-Upcall and LRPC focus on local communication (different aspects, vertically and horizontally), and active messages focus on remote communication. These three papers are all primarily concerned with performance. 
+**Upcall** and **LRPC** focus on local communication (different aspects, vertically and horizontally), and **active messages** focus on remote communication. These three papers are all primarily concerned with performance. 
 
 ## Communication [IPC]: message passing v.s shared memory 
 Inter-process communication (IPC) is a mechanism that allows processes to communicate with each other and synchronize their actions. Processes can communicate with each other through either shared memory model or message passing model.
