@@ -31,7 +31,8 @@ Keys close to 0 would be assigned to A. Keys close to 42 would be assigned to B.
     *  Option 2: every node only knows successor - Table O(1), Lookup O(N)   
 * **Finger table**: store only a few information about other nodes in each node for efficient lookup
     *  Every node knows M other nodes in the ring  
-    *  Lookup efficiency in $N$ node network: $O(log N)$  
+    *  Lookup efficiency in $N$ node network: $O(log N)$
+    *  The $i$th entry in the finger table at node $n$ contains the identity of the first node $s$ that succees $n$ by at least $2^i$
 
 ### Example w/ finger table 
 With a finger table, instead of only knowing its successor, Node A might also know about Node C. So when looking for key 12, instead of having to ask each node in turn, it can skip directly to a node that it knows is closer to the key's location. In the optimal configuration, this can reduce lookup time to O(logN), striking a balance between the maintenance overhead of option 1 and the slow lookups of option 2.
