@@ -4,7 +4,10 @@ Reference: https://github.com/parasj/papers/tree/master/communications
 When we think about communication, we need to think about multiple layers. 
 
 1. Local communication: IPC related concepts, shared memory v.s message passing
-2. Remote communication: how to build a reliable transport? (i.e. UDP v.s TCP) What abstractions of communication should we use when building a distributed system? How to make it efficient and fast? How to make it secure? 
+2. Remote communication
+   *  how to build a reliable transport? (i.e. UDP v.s TCP)
+   *  what abstractions of communication should we use when building a distributed system? (i.e. RPC) 
+   *  how to make it efficient and fast? how to make it secure? 
 
 Upcall and LRPC focus on local communication (different aspects, vertically and horizontally), and active messages focus on remote communication. These three papers are all primarily concerned with performance. 
 
