@@ -19,5 +19,17 @@ Lamport introduces **logical clock**, which is the way to count number of events
 
 **Partial ordering** with lamport clock is useful to establish causation of messages. To produce a **total ordering**, Lamport introduces the notion of tie-breaking based on the deterministic ordering of processes. 
 
+## Examples 
+A, B, C: A broadcast questions, B replies based on that question 
+
 ## Limitations 
 This paper does not present any mechanisms for failure. Also, given Lamport timestamps $L(a)$ and $L(b)$, with $L(a) < L(b)$, we can't tell whether $a \rightarrow b$ or $a || b$. We can tell something, but can't differentiate the event that is concurrent and the event that one happened before the other. If we want to detect which events are concurrent, we need vector clocks.  
+
+In summary, the limitations are:
+* Partial ordering: can't determine order of concurrent events
+* Doesn't handle network failures: delays or message losses can lead to potential inconsistency
+* Overhead: carry timestamp information
+
+Scenarios where they are insufficient:
+* Global total ordering requirements: i.e. tradings 
+* Timestamp transactions: i.e. financial market, where microsecond precision is required for transaction ordering, relying on logical clock can introduce anomalies 
