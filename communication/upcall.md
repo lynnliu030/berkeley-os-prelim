@@ -1,5 +1,5 @@
 # The Structuring of Systems Using Upcalls (1985)
-The paper introduces a mechanism allowing lower layers in a system to call back into higher layer. By allowing synchronous calls between layers instead of using downcalls (i.e. async communication), performance can be greatly enhanced. 
+The paper introduces a mechanism allowing **lower layers in a system to call back into higher layer**. By allowing synchronous calls between layers instead of using downcalls (i.e. async communication), performance can be greatly enhanced. 
 
 ## Baselines: Layer as Processes
 - Each layer as a process: different address space, so no corruption
