@@ -47,4 +47,6 @@ Low latency is critical for good RPC performance. Active Messages demonstrate at
 Active Messages strived to interleave execution with communication. This disguises the latency of the network. In order to enable the processor to remain utilized, interleaving is important.
 
 ## Security v.s Performance 
-Many RPC libraries make security tradeoffs to improve performance. For example, LRPC is where clients execute code directly in the server's domain. For upcalls, single address space makes things faster but also there is a risk on isolation and upward dependencies. 
+Many RPC libraries make security tradeoffs to improve performance. For example, LRPC is where clients execute code directly in the server's domain.
+
+For upcalls, single address space makes things faster but also there is a risk on isolation and upward dependencies. 
