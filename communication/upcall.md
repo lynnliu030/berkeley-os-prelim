@@ -11,6 +11,8 @@ The paper introduces a mechanism allowing **control to be transferred from lower
     - Downcall (polling or callbacks): Tell me when to send / receive more data on any of these sockets
 
 ## Key Techniques 
+* **Definition**: An **upcall** is a mechanism where a lower layer in a system can directly call a function or procedure in an upper layer.
+
 Allow kernel to make synchronous call into client: 
 1. **Single Address Space**: all modules are kept within a single address space to allow for direct procedure calls between them.
 2. **Multi-threading**: modules efficiently use upcalls and downcalls
