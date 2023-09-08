@@ -46,7 +46,7 @@ How can we build a working system out of parts that don’t work correctly all t
                 1. Threads are created when server starts
                 2. When message arrives, dispatched to one of the worker threads 
                 3. Main thread keeps receiving data 
-    2. **Run-time library:** handle most performance and reliability issues ****
+    2. **Run-time library:** handle most performance and reliability issues
         1. Naming: how to locate a remove service 
             1. E.x. host name, IP address 
             2. Also mechanisms to route packets: e.g. DNS, name resolution 
