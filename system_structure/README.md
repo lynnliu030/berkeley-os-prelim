@@ -1,49 +1,51 @@
 # System Structure 
 ## Different types of kernel 
-### Monolithic Kernel 
-Achieves performance and ease of communication (i.e. system calls) at the cost of modular flexibility and isolation-based security. 
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system. Its responsibilities include disk, memory, CPU, and device management, and it provides an interface between user and hardware components of a system. 
 
-1. Flexibility: Limited, everything's in one big codebase.
-2. Reliability: Generally stable but one bug can crash all.
-3. Security: Generally secure but one flaw can be disastrous.
-4. When to Use: Ideal for general-purpose desktop operating systems where performance is a priority and the software ecosystem is well-established. Examples include Linux and traditional UNIX systems.
-5. Why: They are typically faster and have been heavily optimized over years of development.
+### Monolithic Kernel 
+Examples of this include Unix, Linux, BSD, and Multics. All OS services operate in kernel space, OS provides scheduling, file management through sys calls. 
+* _Pros_: Performance - communication between components is fast and efficient!
+* _Cons_
+   *  Complexity: huge kernel
+   *  Poor maintainability: hard to debug and maintain
+   *  Poor reliability: if any service fails, system failure 
+   
 
 ### Microkernel
-Prioritizes modular flexibility and security at the expense of performance due to the overhead in message-passing.
+Examples of this include L4. Microkernel takes a minimalistic approach: kernel space only keep the basic functionalities (e.x. basic IPC, virtual memory, scheduling), and put other services to run in user space as libraries (e.x. device drivers, networking, file system, etc.). Communication between components is provided by IPC. 
 
-1. Flexibility: High, very modular.
-2. Reliability: Stable, isolated modules.
-3. Security: Secure but slower due to isolation (i.e. lots of context switches, IPC between components) 
-4. When to Use: Critical systems where high security and reliability are essential, like in avionics, automotive safety systems, and medical equipment.
-5. Why: The isolated modular components make it easier to verify system correctness and improve security.
+- _Pros_
+    - Scalability: kernel smaller, separation of services at separate layers
+    - Extensibility: new services can be easily added
+    - Easy maintenance and debugging
+    - More secure and reliable: a single service faults not lead to failures
+- _Cons_
+    - Bad performance: lots of system calls and context switches
 
 ### Hybrid Kernel
-Aims for a balanced compromise between performance, security, and reliability but may suffer from increased complexity.
+Examples of this include Windows and Android. The goal is to combine best of both worlds, to provide the speed and simple design of a monolithic kernel, and the modularity and stability of a microkernel
 
-1. Flexibility: Balanced, best of both monolithic and microkernel.
-2. Reliability: Generally stable, depends on implementation.
-3. Security: Balanced, but complexity can introduce flaws.
-4. When to Use: General-purpose systems where a balance of performance, security, and reliability is needed. Microsoft's Windows NT is a good example.
-5. Why: They aim to combine the best features of both monolithic and microkernels, making them versatile for a variety of applications.
+- _Pros_: still similar to monolithic kernel
+    - With disadvantages similar
    
 ### Exokernel
-Maximizes flexibility and performance at the cost of system-wide reliability and security.
+Exokernel is an extreme of microkernel, which follow an end-to-end principals: the kernel is extremely minimal and provide fewest hardware abstractions as possible (i.e. just allocate physical resources to applications).
 
-1. Flexibility: Very high, direct hardware access.
-2. Reliability: Risky, bad code can crash system.
-3. Security: Less secure, minimal isolation.
-4. When to Use: Highly specialized applications or systems that require maximum hardware performance and minimal overhead, like High-Performance Computing (HPC) or real-time systems.
-5. Why: They allow applications to communicate directly with the hardware, ensuring minimal overhead.
+- _Pros_: minimal and simple
+- _Cons_
+    - More work for application developer
+    - Poor isolation: each application implements own LibOS
+        - Libraries accessing directly the HW, don’t have isolations
+    - Hardware compatibility: need to change LibOS depends on HW interfaces
 
-### Multi-kernel 
-Balances scalability and potential reliability, but security is highly variable.
+### Unikernel 
+Unikernel is frequently used in the cloud setup, which is basically an exokernel with containers. The goal of Unikernel was to link applicaiton with just enough OS functionality to allow it to execute. The key idea is that you run one application per VM, and one process per application, and everything compiled to a VM image.
 
-1. Flexibility: Adaptable across multiple CPUs/cores.
-2. Reliability: Redundancy can improve stability.
-3. Security: Varies, but distribution can help.
-4. When to Use: Systems that need to scale across multiple heterogenous cores, CPUs, or even separate machines efficiently, such as cloud computing environments and data centers.
-5. Why: Designed to distribute tasks horizontally, they can offer high performance in distributed computing environments.
+- _Pros_
+    - extremely lightweight (~MB), tailored to perform just one specific application
+    - customizable
+- _Cons_
+    - Similar to exokernels 
 
 ## Design Tradeoffs 
 * Import functionality into kernel vs expose hardware?
