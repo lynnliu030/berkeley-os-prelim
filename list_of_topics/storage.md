@@ -1,4 +1,4 @@
-# Storage
+# Storage Systems
 - Physical organization and performance of Hard Disk Drives (HDDs) and Solid State Drives (SSDs)
 - File system structure: directory structure, index structure (inodes), storage blocks, free space map, hard links, soft links, and buffer cache
 - Case studies: File Allocation Table (FAT) and Berkeley Fast File System (FFS)
