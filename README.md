@@ -1,4 +1,14 @@
-# OS Prelim 
+# Berkeley OS Prelim [2023] 
+This is a repo consisted of my paper-reading notes for Berkeley OS prelim exam 
+* Prelim [reading list](https://ucbosprelim.samkumar.org/reading.html)
+* Basic OS materials (🙌 to Remzi and Andrea): [OSTEP](https://pages.cs.wisc.edu/~remzi/OSTEP/)
+* Practice exams
+    *  Wisconsin [OS Quals](https://www.cs.wisc.edu/operating-systems-quals/)
+    *  Berkeley past prelim [questions](https://www2.eecs.berkeley.edu/Protected/Grads/CS/Prelims/osqu.html)
+* References from my labmate
+    *  Paras [repo](https://github.com/parasj/papers)
+    *  Peter's paper [reading note](https://pschafhalter.com/blog) 
+
 ## Key System Design Principals 
 * **Computer System Design (1983)**
   *   Good system: functionality, speed, fault tolerance
