@@ -2,9 +2,8 @@
 - Kernels, process, threads, address spaces, and hardware privilege level (also known as dual-mode operation)
 - APIs in a UNIX-like environment for using processes (fork, exec, and wait), threads (pthreads), and files (open, read, etc.)
 
-## Virtualization
 
-### Process: abstraction for CPU
+## Process: abstraction for CPU
 
 - CPU abstraction of *a running program*
 - **What constitutes a process?**
@@ -53,7 +52,7 @@ An overview to different types of kernel is [here](https://github.com/lynnliu030
     - Kernel mode: typically high hardware privilege level (e.g., Ring 0)
     - User mode: typically low hardware privilege level (e.g., Ring 3).
 
-### Thread: new abstraction for single running process
+## Thread: new abstraction for single running process
 
 - Thread
     - I.e. like a separate process, except they share the same address space
@@ -83,7 +82,7 @@ An overview to different types of kernel is [here](https://github.com/lynnliu030
         - `pthread_cond_wait()`, `pthread_cond_signal()`: condition variables
     
 
-### Address Space: abstraction for memory
+## Address Space: abstraction for memory
 
 - Address space
     - Virtual address space
@@ -98,7 +97,7 @@ An overview to different types of kernel is [here](https://github.com/lynnliu030
         - Stack: contains local variables arguments to routines, return values, etc.
         - Heap: contains malloc’d data, dynamic data structure
 
-### File API
+## File API
 
 - `open`
 - `read`
