@@ -7,20 +7,18 @@ Mach is an early predecessor of microkernel, providing the functionality of UNIX
 
 In Mach, memory is viewed as **"abstract objects"** comprising collections of bytes with actions. It is easier for developers to extend system functionalities. For instance, file systems are managed through these "memory objects," and operations like reading and writing files are performed via these objects. **File systems are managed through memory objects.** 
 
-Single level store is synonymous with virtual memory, that is that DRAM acts as a cache for secondary storage. By paging in files into memory, it avoids extra intermediate buffers that are allocated during copying.
-
 ## Semantics 
-Memory Objects: memory abstracted as objects with actions 
+_Memory Objects_: memory abstracted as objects with actions 
 
-Tasks and Threads: tasks are similar to processes in UNIX, and each task can have multiple threads. Tasks allocate memory by mapping to these memory objects, which can be shared. 
+_Tasks and Threads_: tasks are similar to processes in UNIX, and each task can have multiple threads. Tasks allocate memory by mapping to these memory objects, which can be shared. 
 
-Ports and Messages: each memory object has an associated port. Tasks and threads communicate with these objects through ports using messages (i.e. data, pointers, or commands for RPCs).
+_Ports and Messages_: each memory object has an associated port. Tasks and threads communicate with these objects through ports using messages (i.e. data, pointers, or commands for RPCs).
 * E.x. File reading
     * application sends IPC message to FS service in user space
     * FS service read data from disk (i.e. communicate with disk driver through IPC)
     * Monolithic: syscall  
 
-Kernel's Role: protection, page lookup, Copy-on-Write (CoW) support, and IPC (i.e. system call like `pipe()`, `msgget()`, `msgsnd()`, `msgrcv()`). It also manages paging and cache, interfacing with memory objects when page faults occur or when data needs to be written back to secondary storage.
+_Kernel's Role_: protection, page lookup, Copy-on-Write (CoW) support, and IPC (i.e. system call like `pipe()`, `msgget()`, `msgsnd()`, `msgrcv()`). It also manages paging and cache, interfacing with memory objects when page faults occur or when data needs to be written back to secondary storage.
 
 ## V.s. Microkernel 
 Mach focus on putting minimal functionalities into the kernel itself. 
