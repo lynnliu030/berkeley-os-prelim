@@ -1,5 +1,5 @@
 # Security 
-https://github.com/parasj/papers/tree/master/security 
+* Reference: https://github.com/parasj/papers/tree/master/security 
 
 Security flaws in OS have immense impact on many users and pieces of software. All of the software relies on proper behavior of underlying hardware, OS has ultimate control of hardware resources. In OS, lots of components can go wrong; with multi-process, the security question becomes even harder. 
 
