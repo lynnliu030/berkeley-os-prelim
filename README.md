@@ -10,7 +10,9 @@ This is a repo consisted of my paper-reading notes for Berkeley OS prelim exam
     *  Peter's paper [reading note](https://pschafhalter.com/blog) 
 
 ## Basic Overview 
-Here are a [list of resources](https://ucbosprelim.samkumar.org/undergraduate.html) to review undergrad materials for OS. I put an summary of each OS basic concept [here](https://github.com/lynnliu030/os-prelim/tree/main/list_of_topics), this include OS concepts and abstractions, synchronization, CPU scheduling, memory management, I/O and system performance, storage system, and network and distributed systems. 
+Here are a [list of resources](https://ucbosprelim.samkumar.org/undergraduate.html) to review undergrad materials for OS. 
+
+Summary on all these concepts are [here](https://github.com/lynnliu030/os-prelim/tree/main/list_of_topics), including OS concepts and abstractions, synchronization, CPU scheduling, memory management, I/O and system performance, storage system, and network and distributed systems. 
 
 ## Key System Design Principals 
 * **Computer System Design (1983)**
