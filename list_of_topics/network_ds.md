@@ -27,9 +27,6 @@ How can we build a working system out of parts that don’t work correctly all t
                 1. machine fails, data structure unavailable, addr space missing, etc. 
             2. Performance: remote fetching 
     2. PL abstraction makes more sense! —> RPC 
-2. RPC is a protocol that one program can use to request a service from a program located on another computer in a network. RPC enables you to make calls to a remote service as though it's a local function. 
-    1. The underlying network and serialization complexities are abstracted away from the user.
-    2. Typically, a stub on the client side translates local calls into network messages which are then unmarshalled on the server side to call the actual procedure.yo
 3. Goal: create wrappers so calling a function on another machine just feels like calling a local function 
     1. **“Location transparency”**: system hides where a resource is located 
 4. Basics 
