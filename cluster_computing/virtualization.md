@@ -21,7 +21,8 @@ For X86 pre 2005, if trap-and-emulate:
 
 ## CPU Virtualization
 
-<img width="1253" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/6d23e632-1de2-4a13-8804-3b99c048875c">
+<img width="890" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/45d1a8e1-ca3f-4feb-904e-31b40f94d483">
+
 
 ### Full virtualization: binary translation and direct execution
 *  Goal: full virtualization == guest OS not modified
@@ -57,7 +58,7 @@ For X86 pre 2005, if trap-and-emulate:
 
 ## Memory Virtualization 
 
-<img width="440" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/eff659fb-83e3-49b8-9085-520888580438">
+<img width="426" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/07f5f4b2-ff73-4834-913f-30373f6ef170">
 
 ### Full virtualization 
 The guests expect contiguous physical memory, start at 0 (just like it owns the machine). We should distinguish virtual v.s physical v.s machine addresses and page frame numbers, and still leverages hardware MMU and TLB. 
@@ -82,7 +83,8 @@ When we look at CPU and memory, there is a significant level of standardization 
 
 For devices, there is higher diversity, and there is lack of specificaiton of device interface and behavior (e.x. what is the behavior when a particular call is invoked on a device). There are three key models for device virtualization (prior to virtualization even exists). 
 
-<img width="876" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/bf7259b6-7539-4366-9f7b-cc20718eb15d">
+<img width="865" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/91f86049-bd5c-4e69-a938-adf1d36552f3">
+
 
 1. Passthrough model: VMM-level driver configures device access permissions
      *  Pros
