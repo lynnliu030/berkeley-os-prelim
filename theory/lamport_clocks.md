@@ -28,7 +28,7 @@ The paper offers a simple algorithm for advancing the logical clocks in a way th
 1. Each node maintains a counter $t$, incremented on local event $e$
 2. When the node sends the message, attach current $t$ to messages sent over the network
 3. Recipients move its clock forward to timestamp in the message (if greater than the local counter), then increments 
-<img width="550" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/1cef77d0-ee2d-4536-b80d-2e45cfc85591">
+<img width="567" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/7c3c8436-f802-4ad7-95d5-9b59811884db">
 
 
 **Partial ordering** with lamport clock is useful to establish causation of messages. To produce a **total ordering**, Lamport introduces the notion of tie-breaking based on the deterministic ordering of processes. 
