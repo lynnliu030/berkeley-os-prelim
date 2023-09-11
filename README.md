@@ -5,7 +5,7 @@ This is a repo consisted of my paper-reading notes for Berkeley OS prelim exam
 * Practice exams
     *  Wisconsin [OS Quals](https://www.cs.wisc.edu/operating-systems-quals/)
     *  Berkeley past prelim [questions](https://www2.eecs.berkeley.edu/Protected/Grads/CS/Prelims/osqu.html)
-* References from my labmate
+* Super useful references from people taken it before 
     *  Paras's [repo](https://github.com/parasj/papers)
     *  Peter's paper [reading note](https://pschafhalter.com/blog) 
 
