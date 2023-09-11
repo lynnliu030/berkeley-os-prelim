@@ -38,15 +38,7 @@ What is RPC?
 * The _stub function_ removes the pain of packing function arguments and results into messages by automating it.
 * This also systems to communicate across multiple languages. Protobuf is an example of a serialization/deserialization format across languages.
 
-LRPC deals with making RPC lightweight. Active Messages offers an alternative model where message handlers are triggered to initiate computation. 
-
-## RPC: need low latency 
-Low latency is critical for good RPC performance. Active Messages demonstrate attention paid to optimize latency for small messages. These needs sometimes bypass the conventional networking stack. 
-
-## Computation and communication overlap 
-Active Messages strived to interleave execution with communication. This disguises the latency of the network. In order to enable the processor to remain utilized, interleaving is important.
+LRPC deals with making RPC lightweight. Active Messages offers an alternative model where message handlers are triggered to initiate computation, and demonstrates attention paid to optimize latency for small messages. These needs sometimes bypass the conventional networking stack. 
 
 ## Security v.s Performance 
-Many RPC libraries make security tradeoffs to improve performance. For example, LRPC is where clients execute code directly in the server's domain.
-
-For upcalls, single address space makes things faster but also there is a risk on isolation and upward dependencies. 
+Many RPC libraries make security tradeoffs to improve performance. For example, LRPC is where clients execute code directly in the server's domain. For upcalls, single address space makes things faster but also there is a risk on isolation and upward dependencies. 
