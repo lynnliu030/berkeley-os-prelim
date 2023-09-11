@@ -15,3 +15,15 @@ Here are a [list of resources](https://ucbosprelim.samkumar.org/undergraduate.ht
 Summary on all these concepts are [here](https://github.com/lynnliu030/os-prelim/tree/main/list_of_topics), including OS concepts and abstractions, synchronization, CPU scheduling, memory management, I/O and system performance, storage system, and network and distributed systems. 
 
 ## Sorted By Topics 
+* [Concurrency and CPU Scheduling](https://github.com/lynnliu030/os-prelim/tree/main/cpu_concurrency)
+* [Communication: Local and Remote](https://github.com/lynnliu030/os-prelim/tree/main/communication)
+* [Storage Systems](https://github.com/lynnliu030/os-prelim/tree/main/storage)
+* [Memory Management](https://github.com/lynnliu030/os-prelim/tree/main/memory)
+* [Distributed System Theory](https://github.com/lynnliu030/os-prelim/tree/main/theory)
+* [Protection and Security](https://github.com/lynnliu030/os-prelim/tree/main/security)
+* [System Structure](https://github.com/lynnliu030/os-prelim/tree/main/system_structure)
+* [Application Structure and Programming Models](https://github.com/lynnliu030/os-prelim/tree/main/programming_model)
+* [Cluster Computing](https://github.com/lynnliu030/os-prelim/tree/main/cluster_computing)
+* [Bugs and Correctness](https://github.com/lynnliu030/os-prelim/tree/main/security)
+* [Mobile, Ubiquitous, and Edge Computing](https://github.com/lynnliu030/os-prelim/tree/main/edge)
+* [Revealed Truth](https://github.com/lynnliu030/os-prelim/tree/main/reveal_truth)
