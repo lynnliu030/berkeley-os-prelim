@@ -28,7 +28,8 @@ Intel's Software Guard Extensions (SGX) offers **hardware-based** security.
 * Computing environment: where code to be executed is protected, even the OS cannot access it
 * At runtime, SGX builds an encrypted area in memory. Code and data can freely operate inside this area but are encrypted when stored or moved outside it, preventing unauthorized access.
    
-<img width="846" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/0032f272-4989-426d-a9bb-d5881afd2164">
+<img width="803" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/80333ea7-4818-4c42-99e8-b9a117eca69a">
+
 
 >At runtime, Intel SGX instructions build and execute the enclave into **a special encrypted memory region** with **restricted entry/exit location** defined by the developer.
 
