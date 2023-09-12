@@ -48,7 +48,8 @@
             - If not, do nothing
             - In either case, return original value at that memory location, allow the code calling this call knows it succeeds or not
         
-        <img width="566" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ab35d497-8622-4c63-ae2c-cdf68e3676f3">
+        <img width="584" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ea5d6eb1-0dd9-4faa-bdd1-53543284876f">
+
         
         - Pros: more powerful instruction than test-and-set (i.e. in lock-free synchronization) setup
 
@@ -56,14 +57,15 @@
 - POSIX call lock: mutex
     - To provide the mutual exclusion
 - Example of lock as below
-<img width="566" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ab35d497-8622-4c63-ae2c-cdf68e3676f3">
+<img width="624" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ea5b04af-772c-4031-9b99-656bc2fb24c1">
 
 ## Condition Variables
 - **Condition variable**
     - Def: explicit queue that threads can put themselves on when some state of execution (i.e. some **condition**) is not as desired (by **waiting** on the condition)
     - Some other thread, when it changes said state, can then wake one (or more) of those waiting threads and allow them to continue (by **signaling** on condition)
 
-<img width="557" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/6d34c983-bdf1-4dcc-8014-7b9cf0ec8e11">
+<img width="621" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/14618f97-20cc-430d-8a8a-954492efc29c">
+
 
 ## Semaphore
 - A semaphore: an object with an integer value that we can manipulate with two routines
@@ -95,4 +97,5 @@ sem_post(&m);
 ```
 
 - Binary semaphore
-<img width="705" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/7d9dfa02-3494-4ae7-b776-12d083a39ecf">
+<img width="611" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/d88ad80c-2813-4472-83a9-1944e83e4253">
+
