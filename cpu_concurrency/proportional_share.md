@@ -17,7 +17,7 @@ Deterministic fair-share scheduler. Each job in the system has a **stride**, whi
 
 At any given time, pick the process to run that has the lowest pass value so far. When run a process, increment its **pass** counter by stride. Pros is deterministic, but cons is need to maintain global state per process. 
 
-<img width="705" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/9b622855-558e-430b-8215-d8ed800e5a1b">
+<img width="464" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/4d0a6bc7-513e-4e7f-b285-86b265d1becb">
 
 ## Linux: CFS
 Completely Fair Scheduler (cfs) implements fair-share scheduling, but does so in a highly efficient and scalable manner. 
@@ -26,4 +26,5 @@ The basic idea of CFS is to fairly divide a CPU evenly among all competing proce
 
 There are several parameters to determine how long the time slice is (i.e. `sched_latency`, `min_granularity`), enable control over process priority (`nice` and weight) and so on. It uses red-black tree to keep runnable processes to enable efficient scheduling. To avoid starvation, CFS sets the `vruntime` of that job to minimum value found in the tree. 
 
-<img width="572" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/f3bfc6c5-edbb-471e-9655-6510ca68a4c7">
+<img width="496" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/656f8ac7-8202-41fc-9931-d17b1a45d99a">
+
