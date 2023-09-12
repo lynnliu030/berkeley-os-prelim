@@ -3,4 +3,4 @@ This paper presents the experience in performing the formal, machine-checked ver
 
 The authors implement the OS first in Haskell to prototype proofs and refine the spec. Then, they implemented it in C and then used the spec to verify their C implementation. This enables high performance while ensuring correctness. Some parts of the verification steps seem to be manual. But it seems to ensure confidence that correctness is preserved.
 
-<img width="684" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/e08083f1-bedb-4ed5-9a63-26b547430b4c">
+<img width="604" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/04620d93-d741-47b7-8488-78996ec8d922">
