@@ -39,7 +39,7 @@ A component is an independent computational entity that exposes one or more inte
    * background computation, not time critical 
    * task scheduler: FIFO  
 
-<img width="185" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/c8d9de20-111d-4c36-8b97-bd98def71b67">
+<img width="288" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/2ecada51-d8c0-4aa5-af93-26958388d6d5">
 
 
 ## Compared 
