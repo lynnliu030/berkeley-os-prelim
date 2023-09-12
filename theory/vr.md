@@ -47,7 +47,8 @@ _Reasoning_:
 | $l$ |  replica log |
 
 ### #1: Normal Operation Protocol 
-<img width="729" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/b6bca776-ca65-4513-896b-c9aa675e90e7">
+<img width="579" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/23dcbb8e-c1b2-48ee-ad19-f1405a15bafd">
+
 
 1. Client sends <REQUEST _op_, $c$, $s$, $v$ > to primary
 2. Primary advances _op-number_ and adds request to end of the _log_, then it sends < $PREPARE$, $m$, $v$, $n$ > to other replicas
