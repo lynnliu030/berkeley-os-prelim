@@ -102,7 +102,8 @@ Main Goal - *Efficiency:* hardware support to perform translation quickly for ea
             - Complexity
                 - Page-table lookups more complicated in order to save valuable memory
 
-<img width="574" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/5b7c7979-4fe2-4c80-aff2-1b137d2d0db5">
+<img width="622" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/f5a68fa3-1234-4859-813f-b94ae5f25e45">
+
 
 ### Other objectives
 
