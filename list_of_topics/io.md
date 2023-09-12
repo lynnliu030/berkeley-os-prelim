@@ -16,8 +16,7 @@
     2. Tradeoff: **Explicit I/O instructions**, **memory-mapped I/O** 
 
 ## Buses, Controllers
-<img width="548" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/9dc3ecf4-1c8d-41bc-9d10-15b4b3af5627">
-
+<img width="490" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/93f45763-6547-49f6-b080-e7a9c8f10b30">
 
 General architecture:
 
@@ -29,7 +28,8 @@ General architecture:
     - Components demand high performance (e.g. graphic card) are nearer the CPU
     - Low performance components are further away
       
-<img width="655" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/74aa75b1-9a62-4032-b6ab-d0b138e886a1">
+<img width="420" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ae3150d7-e322-489b-86c5-f6ff7068e0c4">
+
 
 Registers 
 1. Status register: read to see current status of the device 
