@@ -44,16 +44,18 @@ Techniques
 ## Protocol: trust group not individuals 
 
 ### Normal Operation Protocol 
-<img width="748" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/e9c21dae-d32e-42a9-bf0a-226111de8b8c">
+<img width="741" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/5027562f-ddf6-4de7-b454-15a2b29df3f2">
 
-<img width="649" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/e5db621c-2e15-48be-9ac4-3bf15445a02c">
+
+<img width="640" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/86fc72cc-3564-4222-88a0-28036e0f7b4b">
+
 
 * Also, client only accepts a result if it receives $f+1$ authenticated messages with the same result 
 * Why pre-prepare stage? 
       *   Basic idea: Replica can be faulty! (i.e. assign wrong timestamp, etc.)
 
 ### View Change Protocol 
-<img width="803" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/3dccb62a-e592-4c94-89b4-160d92416792">
+<img width="744" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/ff625fd6-e167-4fcb-9fff-5b79dfafeada">
 
 *   _certificate_: a collection of matching valid signed messages from $2f+1$ different replicas, representing **a proof that certain thing has happened**
       *   messages are signed, so replica is able to evaluate a certificate and decide for itself whether it is valid    
