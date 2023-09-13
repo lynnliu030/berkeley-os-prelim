@@ -12,7 +12,8 @@ GFS is a scalable distributed file system for large distributed data-intensive a
    *  many large, sequential writes; none random writes
 
 ## Architecture 
-<img width="757" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/cc86b652-8300-409e-a5cf-e09ed38e597c">
+<img width="1001" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/69c02a7e-a550-4d22-a384-95cc4dfc5f6f">
+
 
 * Control plane: single **master**
     *  Store metadata: namespace mapping
