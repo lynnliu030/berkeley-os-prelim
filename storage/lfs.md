@@ -26,7 +26,8 @@ LFS uses write buffering to keep track of updates in memory before writing to di
           *  Given inode #
               *  Look up imap, read inode
               *  Read block
-<img width="640" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/4969cc28-d5ca-406d-8c7d-465489935d71">
+<img width="617" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/51ea5ecd-08e4-4a14-9b32-208821ea95b6">
+
      
 ## Garbage collection 
 *  Segment-level cleaning
