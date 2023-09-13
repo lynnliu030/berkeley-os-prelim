@@ -8,7 +8,8 @@ But many domains this is not major concern, like in a virtualized data center (i
 ## Lottery Scheduling 
 Use **tickets** to represent the share of a resource that a process should have. The scheduler picks a winning tkcet (among total # of tickets), and the winning tickets determine which process should run. 
 
-<img width="754" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/b960c175-a126-4e8f-8072-80077c0cd164">
+<img width="729" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/2634bdfb-5c6e-441f-9dac-8379f3d96e93">
+
 
 The benefits of this approach is that it is lightweight and easy to implement, there is no global state. The cons are that the scheduling is non-deterministic, and ticket assignment is a difficult problem. 
 
