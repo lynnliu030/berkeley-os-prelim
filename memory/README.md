@@ -1,6 +1,8 @@
 # Virtual memory 
 Overview: https://pages.cs.wisc.edu/~sschang/OS-Qual/memory/Memory.htm
 
+Reference: https://github.com/parasj/papers/tree/master/virtual_memory 
+
 ## Space Management Mechanisms: Segmentation v.s Paging 
 Segmentation and paging are two different techniques that OS uses for memory space management. 
 
