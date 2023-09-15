@@ -1,5 +1,7 @@
 # System Structure 
 ## Different types of kernel 
+<img width="1280" alt="image" src="https://github.com/lynnliu030/os-prelim/assets/39693493/325fc7dc-2bd8-466f-838b-2bac23719d7f">
+
 The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system. Its responsibilities include disk, memory, CPU, and device management, and it provides an interface between user and hardware components of a system. 
 
 ### Monolithic Kernel 
